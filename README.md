@@ -1,2 +1,6 @@
-# materi_teori01
-tugas untuk memasukkan peminatan sesuai lab nya
+# materi_teori01  
+
+Tugas untuk memasukkan peminatan sesuai lab nya  
+
+## Peminatan
+- [Astrofisika](teori_laboratorium/astrofisika.md)
