@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,31 +8,25 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f5f7fa;
+      background-color: #f8f9fc;
       color: #222;
     }
+
+    /* Header */
     header {
-      background: linear-gradient(rgba(30,60,90,0.8), rgba(30,60,90,0.8)),
-                  url("image/bg-astro.jpg") no-repeat center center/cover;
-      color: #fff;
-      text-align: center;
-      padding: 100px 20px;
+      background-color: #0a2a43;
+      color: white;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     header h1 {
-      font-size: 40px;
       margin: 0;
-    }
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
-    nav {
-      background-color: #3b5b82;
-      text-align: center;
-      padding: 12px;
+      font-size: 22px;
     }
     nav a {
-      color: #f5f7fa;
+      color: white;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
@@ -39,12 +34,105 @@
     nav a:hover {
       text-decoration: underline;
     }
-    .features {
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(10,42,67,0.7), rgba(10,42,67,0.7)),
+                  url("https://source.unsplash.com/1600x600/?universe,space") center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    /* Content Section */
+    .content {
       display: flex;
       justify-content: space-around;
-      padding: 40px 20px;
-      background-color: #eaf0f9;
-      flex-wrap: wrap;
-      gap: 20px;
+      margin: 50px auto;
+      max-width: 1100px;
     }
-    .featur
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 30%;
+      padding: 20px;
+      text-align: center;
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #0a2a43;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 15px;
+      background: #0a2a43;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .card a:hover {
+      background: #145c9e;
+    }
+
+    /* Footer */
+    footer {
+      background: #0a2a43;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Materi Teori Fisika</h1>
+    <nav>
+      <a href="lab_teori/astrofisika.html">Astrofisika</a>
+      <a href="lab_teori/bintang.html">Bintang</a>
+      <a href="lab_teori/kosmologi.html">Kosmologi</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Selamat Datang di Dunia Fisika</h2>
+    <p>Jelajahi materi Astrofisika, Bintang, dan Kosmologi dalam satu portal pembelajaran.</p>
+  </section>
+
+  <section class="content">
+    <div class="card">
+      <h3>Astrofisika</h3>
+      <p>Mempelajari fenomena alam semesta dan teori astrofisika modern.</p>
+      <a href="lab_teori/astrofisika.html">Lihat Materi</a>
+    </div>
+    <div class="card">
+      <h3>Bintang</h3>
+      <p>Menjelajahi proses kelahiran, evolusi, dan kematian bintang.</p>
+      <a href="lab_teori/bintang.html">Lihat Materi</a>
+    </div>
+    <div class="card">
+      <h3>Kosmologi</h3>
+      <p>Memahami asal-usul, struktur, dan perkembangan alam semesta.</p>
+      <a href="lab_teori/kosmologi.html">Lihat Materi</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Materi Teori Fisika | Dibuat dengan ❤️</p>
+  </footer>
+
+</body>
+</html>
+```
