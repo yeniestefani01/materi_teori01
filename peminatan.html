@@ -3,26 +3,87 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Peminatan Fisika</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f6fa;
+      color: #222;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(to right, #1e3a8a, #2563eb);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 40px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #dbeafe;
+    }
+
+    /* Menu Section */
+    section.menu {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #1e3a8a;
+      font-size: 20px;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #444;
+    }
+
+    /* Footer */
+    footer {
+      background: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-  <!-- Tampilan mirip beranda modern -->
-  <header class="hero">
+
+  <header>
     <h1>Peminatan Fisika</h1>
-    <p>Pilih bidang peminatan yang tersedia di Lab Teori Fisika</p>
-  </header>
-
-  <section class="menu">
-    <ul>
-      <li><a href="lab_teori/astrofisika.html">Astrofisika</a></li>
-      <li><a href="lab_teori/bintang.html">Bintang</a></li>
-      <li><a href="lab_teori/kosmologi.html">Kosmologi</a></li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>© 2025 Yeni Estefani</p>
-  </footer>
-</body>
-</html>
+    <p>Pilih bidang kajian fisika untuk dipelajari lebih lanjut</p>
+  </he
