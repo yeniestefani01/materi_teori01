@@ -1,37 +1,38 @@
-/* Style khusus untuk peminatan */
+/* Reset dasar */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #4a6fa5; /* biru soft */
-  color: #f5f5f5; /* tulisan terang */
+  background-color: #ffffff; /* bawah putih */
+  color: #333;
 }
 
+/* Bagian header atas */
 header.hero {
-  background-color: #3b5c82;
-  text-align: center;
+  background-color: #2e4d73; /* biru soft */
+  color: #ffffff;            /* teks putih agar kontras */
+  text-align: center;        /* rata tengah */
   padding: 60px 20px;
 }
 
 header.hero h1 {
   font-size: 2.5em;
   margin: 0;
-  color: #ffffff;
 }
 
 header.hero p {
   font-size: 1.2em;
   margin-top: 10px;
-  color: #e0e0e0;
 }
 
+/* Navigasi */
 nav {
-  background-color: #2e4d73;
+  background-color: #1c314c; /* biru lebih gelap */
   text-align: center;
   padding: 12px 0;
 }
 
 nav a {
-  color: #f5f5f5;
+  color: #ffffff;
   margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
@@ -41,17 +42,16 @@ nav a:hover {
   color: #ffdd57;
 }
 
+/* Bagian konten utama */
 main {
-  padding: 30px;
+  background-color: #ffffff; /* putih bawah */
+  color: #333;
   text-align: center;
+  padding: 40px 20px;
 }
 
-.materi-list h2 {
-  margin-bottom: 10px;
-}
-
-.buttons {
-  margin-top: 20px;
+main h2 {
+  margin-bottom: 15px;
 }
 
 .btn {
@@ -67,12 +67,14 @@ main {
 }
 
 .btn:hover {
-  background-color: #1c314c;
+  background-color: #16324f;
 }
 
+/* Footer */
 footer {
   background-color: #2e4d73;
   text-align: center;
   padding: 15px;
   margin-top: 40px;
+  color: #ffffff;
 }
