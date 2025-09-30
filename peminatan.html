@@ -1,9 +1,76 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Materi Peminatan</title>
-  <link rel="stylesheet" href="style_peminatan.css">
+  <title>Peminatan Materi</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6fa;
+      color: #333;
+    }
+    header {
+      background-color: #2563EB; /* biru soft */
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #1E3A8A;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #93C5FD;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 25px;
+      background-color: white;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      text-align: center;
+    }
+    h1 {
+      color: white; /* ubah tulisan jadi putih agar jelas */
+      margin: 0;
+    }
+    .btn-group {
+      margin-top: 20px;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      background-color: #2563EB;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #1E3A8A;
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      padding: 15px;
+      background-color: #2563EB;
+      color: white;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -13,15 +80,16 @@
 
   <nav>
     <a href="index.html">Beranda</a>
+    <a href="peminatan.html">Materi</a>
+    <a href="lab_teori.html">Lab Teori</a>
   </nav>
 
   <div class="container">
-    <h1>Daftar Materi</h1>
-    <p>Klik salah satu tombol untuk masuk ke halaman materi.</p>
+    <h2>Pilih Materi</h2>
     <div class="btn-group">
-      <a href="lab_teori/astrofisika.html" class="btn">Astrofisika</a>
-      <a href="lab_teori/bintang.html" class="btn">Bintang</a>
-      <a href="lab_teori/kosmologi.html" class="btn">Kosmologi</a>
+      <a href="teori_laboratorium/astrofisika.html" class="btn">Astrofisika</a>
+      <a href="teori_laboratorium/bintang.html" class="btn">Bintang</a>
+      <a href="teori_laboratorium/kosmologi.html" class="btn">Kosmologi</a>
     </div>
   </div>
 
