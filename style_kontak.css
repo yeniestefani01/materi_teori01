@@ -1,1 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
+}
+
+.card {
+  background: #ffffff;
+  border: 2px solid #4da6ff;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 500px;
+  margin: 40px auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card h4 {
+  color: #004080;
+  margin-bottom: 15px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 6px 0;
+  padding: 8px 14px;
+  text-decoration: none;
+  color: white;
+  background: #3399ff;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  background: #0073e6;
+}
 
