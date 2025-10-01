@@ -7,11 +7,13 @@ body {
 }
 
 /* Bagian header atas */
-header.hero {
-  background-color: #2e4d73; /* biru soft */
-  color: #ffffff;            /* teks putih agar kontras */
-  text-align: center;        /* rata tengah */
+
+.header {
+  background: url("header-bg.jpeg") no-repeat center center/cover;
+  color: white;
   padding: 60px 20px;
+  text-align: center;
+  border-radius: 0 0 12px 12px;
 }
 
 header.hero h1 {
