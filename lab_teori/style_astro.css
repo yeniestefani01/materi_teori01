@@ -17,7 +17,6 @@ body {
   justify-content: center;
   text-align: center;
 }
-
 .hero .overlay {
   background: rgba(0, 0, 0, 0.5); /* efek gelap transparan */
   width: 100%;
