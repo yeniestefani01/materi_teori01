@@ -8,14 +8,14 @@ body {
 /* Bagian hero dengan gambar background */
 .hero {
   position: relative;
-  height: 300px;
+  height: 100px;
   background: url("../image/astro.jpg") no-repeat center center/cover;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 60px;
+  padding-top: 30px;
 }
 
 .hero .overlay {
