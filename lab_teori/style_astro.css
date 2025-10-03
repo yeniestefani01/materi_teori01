@@ -8,31 +8,31 @@ body {
 /* Bagian hero dengan gambar background */
 .hero {
   position: relative;
-  height: 100px;
+  height: 250px; /* atur lebih kecil, bisa coba 200-300px sesuai selera */
   background: url("../image/astro.jpg") no-repeat center center/cover;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-top: 30px;
+  color: white;
 }
 
-.hero .overlay {
-  background: rgba(0, 0, 0, 0.5); /* efek gelap transparan */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  padding: 20px;
+  background: rgba(0, 0, 128, 0.5); /* overlay navy transparan */
+  z-index: 1;
 }
 
-.hero h1 {
-  margin: 0;
-  font-size: 36px;
-}
-
-.hero p {
-  margin-top: 10px;
-  font-size: 18px;
+.hero h1,
+.hero p,
+.hero nav {
+  position: relative;
+  z-index: 2; /* biar tulisan tampil di atas overlay */
 }
 
 /* Navigasi di bawah judul */
