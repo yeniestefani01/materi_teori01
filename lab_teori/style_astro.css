@@ -8,7 +8,7 @@ body {
 /* Bagian hero dengan gambar background */
 .hero {
   position: relative;
-  height: 250px; /* atur lebih kecil, bisa coba 200-300px sesuai selera */
+  height: 300px; /* atur lebih kecil, bisa coba 200-300px sesuai selera */
   background: url("../image/astro.jpg") no-repeat center center/cover;
   display: flex;
   align-items: center;
