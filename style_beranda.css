@@ -1,6 +1,7 @@
+/* ===== HERO SECTION ===== */
 .hero {
   position: relative;
-  background: linear-gradient(rgba(30,70,120,0.7), rgba(30,70,120,0.7)), 
+  background: linear-gradient(rgba(30,70,120,0.7), rgba(30,70,120,0.7)),
               url('image/bg-astro.jpg') no-repeat center/cover;
   color: #fff;
   height: 100vh;
@@ -17,6 +18,8 @@
   align-items: center;
   justify-content: center;
 }
+
+/* ===== BODY ===== */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -25,6 +28,7 @@ body {
   overflow-x: hidden;
 }
 
+/* ===== BUTTON ===== */
 .btn-primary {
   background-color: #4da3ff;  /* biru terang */
   color: #fff;
@@ -42,45 +46,12 @@ body {
   box-shadow: 0 8px 20px rgba(77,163,255,0.5);
 }
 
+/* ===== BIODATA SECTION ===== */
 .biodata {
   background: linear-gradient(to right, #fdfcf8, #e8f0ff);
   padding: 60px 0;
   text-align: center;
   border-top: 2px solid #d7e4ff;
-}
-
-footer {
-  background-color: #1f3c88;
-  color: #eaf1ff;
-  text-align: center;
-  padding: 25px;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-}
-
-
-
-}
-/* ===== FOOTER ===== */
-footer {
-  background-color: #1a2a45;
-  color: #e0e8f9;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-}
-
-/* ===== KEYFRAMES ===== */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== BIODATA SECTION ===== */
-.biodata {
-  background-color: #f6f9fc;
-  padding: 60px 0;
-  text-align: center;
 }
 
 .bio-container {
@@ -103,4 +74,20 @@ footer {
 .bio-text {
   max-width: 500px;
   text-align: left;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: #1f3c88;
+  color: #eaf1ff;
+  text-align: center;
+  padding: 25px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
