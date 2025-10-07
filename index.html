@@ -2,64 +2,58 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Beranda Fisika</title>
- <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beranda Fisika Modern</title>
+  <link rel="stylesheet" href="style_beranda.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
-  <header>
-    <h1>Fisika Modern</h1>
-    <p>Eksplorasi Alam Semesta & Energi di Sekitarmu</p>
+  <header class="hero">
+    <div class="overlay">
+      <div class="hero-content">
+        <div class="text-section">
+          <h1>Halo, Saya <span class="highlight">Niny</span></h1>
+          <p class="subtitle">
+            Mahasiswi Fisika yang berfokus pada bidang <strong>Astrofisika</strong> — 
+            menjelajahi rahasia alam semesta dan struktur kosmik dengan rasa ingin tahu tanpa batas.
+          </p>
+          <a href="peminatan.html" class="btn-primary">Lihat Peminatan Saya →</a>
+        </div>
+        <div class="image-section">
+          <img src="1f5c9498-6218-4d3c-888d-817c28fc8e32.jpeg" alt="Foto Profil Niny">
+        </div>
+      </div>
+    </div>
   </header>
 
-  <nav>
-  <a href="peminatan.html">Materi</a>
-  <a href="kontak.html">Kontak</a>
-</nav>
-
-  <section class="features">
-    <div class="feature">
-      <h3>⚛️ Astrofisika</h3>
-      <p>Mempelajari bintang, galaksi, dan fenomena kosmik.</p>
-    </div>
-    <div class="feature">
-      <h3>🔭 Kosmologi</h3>
-      <p>Menguak rahasia asal-usul dan evolusi alam semesta.</p>
-    </div>
-    <div class="feature">
-      <h3>💡 Energi</h3>
-      <p>Teori energi dalam kehidupan dan teknologi modern.</p>
-    </div>
-    <div class="feature">
-      <h3>🧪 Eksperimen</h3>
-      <p>Laboratorium fisika untuk memahami hukum alam.</p>
-    </div>
-  </section>
-
-  <div class="counter">
-    Total Mahasiswa Belajar: <span id="count">12,345</span> 👩‍🔬👨‍🔬
-  </div>
-
-  <section class="services">
-    <h2>Bidang Kajian</h2>
-    <div class="service-list">
-      <div class="service">
-        <h3>Bintang & Evolusinya</h3>
-        <p>Memahami siklus hidup bintang dari lahir hingga supernova.</p>
-      </div>
-      <div class="service">
-        <h3>Lubang Hitam</h3>
-        <p>Fenomena ekstrim gravitasi yang misterius dan menantang.</p>
-      </div>
-      <div class="service">
-        <h3>Partikel & Kuantum</h3>
-        <p>Fisika skala mikroskopis untuk memahami dasar alam.</p>
-      </div>
-    </div>
+  <section class="about">
+    <h2>Tentang Saya</h2>
+    <p>
+      Saya tertarik memahami hukum-hukum fisika yang mengatur galaksi, bintang, dan energi di alam semesta.
+      Melalui astrofisika, saya ingin menjembatani pengetahuan antara teori dan pengamatan kosmik.
+      Dunia fisika tidak hanya tentang rumus, tapi tentang bagaimana kita memahami keberadaan kita di semesta ini.
+    </p>
   </section>
 
   <footer>
-    <p>© 2025 Website Fisika. Semua Hak Dilindungi.</p>
-    <p>Kontak: fisika@kampus.ac.id</p>
+    <p>© 2025 Niny | Fisika Modern</p>
   </footer>
+
+  <script>
+    // Animasi muncul lembut saat di-scroll
+    ScrollReveal({
+      reset: false,
+      distance: '60px',
+      duration: 1200,
+      delay: 200
+    });
+
+    ScrollReveal().reveal('.text-section h1', { origin: 'left' });
+    ScrollReveal().reveal('.text-section p', { delay: 300, origin: 'bottom' });
+    ScrollReveal().reveal('.btn-primary', { delay: 400, origin: 'bottom' });
+    ScrollReveal().reveal('.image-section', { delay: 500, origin: 'right' });
+    ScrollReveal().reveal('.about h2', { origin: 'top' });
+    ScrollReveal().reveal('.about p', { delay: 300, origin: 'bottom' });
+  </script>
 </body>
 </html>
