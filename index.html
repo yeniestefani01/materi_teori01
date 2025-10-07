@@ -8,6 +8,7 @@
   <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
+  <!-- Bagian Header -->
   <header class="hero">
     <div class="overlay">
       <div class="hero-content">
@@ -19,28 +20,35 @@
           </p>
           <a href="peminatan.html" class="btn-primary">Lihat Peminatan Saya →</a>
         </div>
-        <div class="image-section">
-          <img src="1f5c9498-6218-4d3c-888d-817c28fc8e32.jpeg" alt="Foto Profil Niny">
-        </div>
       </div>
     </div>
   </header>
 
-  <section class="about">
-    <h2>Tentang Saya</h2>
-    <p>
-      Saya tertarik memahami hukum-hukum fisika yang mengatur galaksi, bintang, dan energi di alam semesta.
-      Melalui astrofisika, saya ingin menjembatani pengetahuan antara teori dan pengamatan kosmik.
-      Dunia fisika tidak hanya tentang rumus, tapi tentang bagaimana kita memahami keberadaan kita di semesta ini.
-    </p>
+  <!-- Bagian Biodata -->
+  <section class="biodata">
+    <div class="bio-container">
+      <div class="image-section">
+        <img src="image/foto_niny.jpg" alt="Foto Profil Niny">
+      </div>
+
+      <div class="bio-text">
+        <h2>Tentang Saya</h2>
+        <p>
+          Saya tertarik memahami hukum-hukum fisika yang mengatur galaksi, bintang, dan energi di alam semesta.
+          Melalui astrofisika, saya ingin menjembatani pengetahuan antara teori dan pengamatan kosmik.
+          Dunia fisika tidak hanya tentang rumus, tapi tentang bagaimana kita memahami keberadaan kita di semesta ini.
+        </p>
+      </div>
+    </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 Niny | Fisika Modern</p>
   </footer>
 
+  <!-- Animasi Scroll -->
   <script>
-    // Animasi muncul lembut saat di-scroll
     ScrollReveal({
       reset: false,
       distance: '60px',
@@ -52,8 +60,7 @@
     ScrollReveal().reveal('.text-section p', { delay: 300, origin: 'bottom' });
     ScrollReveal().reveal('.btn-primary', { delay: 400, origin: 'bottom' });
     ScrollReveal().reveal('.image-section', { delay: 500, origin: 'right' });
-    ScrollReveal().reveal('.about h2', { origin: 'top' });
-    ScrollReveal().reveal('.about p', { delay: 300, origin: 'bottom' });
+    ScrollReveal().reveal('.bio-text', { delay: 600, origin: 'left' });
   </script>
 </body>
 </html>
