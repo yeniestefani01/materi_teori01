@@ -5,114 +5,6 @@ body {
   color: #1a2a45;
   overflow-x: hidden;
 }
-
-/* ===== HERO SECTION ===== */
-.hero {
-  position: relative;
-  background: linear-gradient(rgba(10,30,60,0.6), rgba(10,30,60,0.6)), 
-              url('image/bg-astro.jpg') no-repeat center/cover;
-  color: #fff;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.overlay {
-  width: 100%;
-  height: 100%;
-  background: rgba(20, 40, 70, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 85%;
-  max-width: 1100px;
-  flex-wrap: wrap;
-  gap: 50px;
-  animation: fadeIn 2s ease;
-}
-
-.text-section {
-  flex: 1;
-  max-width: 550px;
-}
-
-.text-section h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-
-.highlight {
-  color: #9ec8ff;
-}
-
-.subtitle {
-  font-size: 18px;
-  margin-bottom: 30px;
-  line-height: 1.6;
-  color: #e9eefc;
-}
-
-.btn-primary {
-  background-color: #1f3c88;
-  color: #fff;
-  text-decoration: none;
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #2954b1;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-}
-
-.image-section img {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid #fff;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-  transition: transform 0.4s ease;
-}
-
-.image-section img:hover {
-  transform: scale(1.05);
-}
-
-/* ===== ABOUT SECTION ===== */
-.about {
-  text-align: center;
-  padding: 80px 20px;
-  background-color: #f5f7fb;
-}
-
-.about h2 {
-  color: #1f3c88;
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-.about p {
-  max-width: 800px;
-  margin: auto;
-  font-size: 17px;
-  line-height: 1.7;
-  color: #333;
-  opacity: 0.95;
-}
-
 /* ===== FOOTER ===== */
 footer {
   background-color: #1a2a45;
@@ -126,4 +18,33 @@ footer {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== BIODATA SECTION ===== */
+.biodata {
+  background-color: #f6f9fc;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.bio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.image-section img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #1e2a45;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.bio-text {
+  max-width: 500px;
+  text-align: left;
 }
