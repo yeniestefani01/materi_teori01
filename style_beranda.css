@@ -1,5 +1,5 @@
 /* ===== HERO SECTION ===== */
-.hero {
+.hero { 
   position: relative;
   background: linear-gradient(rgba(30,70,120,0.7), rgba(30,70,120,0.7)),
               url('image/bg-astro.jpg') no-repeat center/cover;
