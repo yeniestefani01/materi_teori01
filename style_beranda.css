@@ -75,25 +75,10 @@ body {
 
 .short-bio h3 {
   color: #1f3c88;
-  margin-bottom: 15px;
+  margin-bottom: 70px;
   font-size: 18px;
 }
-
-.short-bio ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.short-bio li {
-  padding: 6px 0;
-  font-size: 15px;
-  color: #2f4466;
-}
-
-.short-bio strong {
-  color: #1a2a45;
-}
+.short-bio strong {color: #1a2a45;}
 
 /* Bagian Tentang Saya di bawah */
 .about-me {
