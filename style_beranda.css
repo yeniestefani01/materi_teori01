@@ -7,8 +7,7 @@
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-}
+  justify-content: center;}
 
 .overlay {
   width: 100%;
@@ -16,8 +15,7 @@
   background: rgba(40, 70, 120, 0.5);
   display: flex;
   align-items: center;
-  justify-content: center;
-}
+  justify-content: center;}
 
 /* ===== BODY ===== */
 body {
@@ -25,8 +23,7 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: #faf8f3; /* cream lembut */
   color: #1a2a45;
-  overflow-x: hidden;
-}
+  overflow-x: hidden;}
 
 /* ===== BUTTON ===== */
 .btn-primary {
@@ -37,22 +34,19 @@ body {
   border-radius: 30px;
   font-weight: bold;
   box-shadow: 0 6px 15px rgba(77,163,255,0.4);
-  transition: all 0.3s ease;
-}
+  transition: all 0.3s ease;}
 
 .btn-primary:hover {
   background-color: #70b7ff;  /* biru lebih lembut saat hover */
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(77,163,255,0.5);
-}
+  box-shadow: 0 8px 20px rgba(77,163,255,0.5);}
 .bio-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 50px;
   flex-wrap: wrap;
-  margin-bottom: 80px;
-}
+  margin-bottom: 80px;}
 
 .image-section img {
   width: 260px;
@@ -60,8 +54,7 @@ body {
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #1e2a45;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-}
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);}
 
 .short-bio {
   background: linear-gradient(to right, #eaf3ff, #fff8f0);
@@ -70,14 +63,12 @@ body {
   padding: 25px 30px;
   max-width: 400px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  animation: fadeIn 1s ease;
-}
+  animation: fadeIn 1s ease;}
 
 .short-bio h3 {
   color: #1f3c88;
   margin-bottom: 70px;
-  font-size: 18px;
-}
+  font-size: 18px;}
 .short-bio strong {color: #1a2a45;}
 
 /* Bagian Tentang Saya di bawah */
@@ -88,22 +79,19 @@ body {
   background-color: #f6f9fc;
   padding: 30px 40px;
   border-radius: 15px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-}
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);}
 
 .about-me h2 {
   text-align: center;
   color: #1a2a45;
-  margin-bottom: 15px;
-}
+  margin-bottom: 15px;}
 
 .about-me p {
   text-indent: 35px;
   line-height: 1.8;
   color: #1f2e4d;
   font-size: 16px;
-  margin-top: 10px;
-}
+  margin-top: 10px;}
 
 /* ===== FOOTER ===== */
 footer {
@@ -112,11 +100,9 @@ footer {
   text-align: center;
   padding: 25px;
   font-size: 14px;
-  letter-spacing: 0.5px;
-}
+  letter-spacing: 0.5px;}
 
 /* ===== ANIMATION ===== */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+  to { opacity: 1; transform: translateY(0); }}
