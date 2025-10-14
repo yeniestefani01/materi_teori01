@@ -68,10 +68,12 @@
   <!-- Animasi Scroll -->
   <script>
     ScrollReveal({reset: false,distance: '60px',duration: 1200,delay: 200});
+  ScrollReveal().reveal('h1, h2, h3', { origin: 'left' });
+  ScrollReveal().reveal('p', { delay: 200,origin: 'bottom' });
+  ScrollReveal().reveal('.btn, button, a', { delay: 400,origin: 'bottom'});
    ScrollReveal().reveal('.short-bio', { delay: 300, origin: 'right' });
 ScrollReveal().reveal('.bio-image', { delay: 300, origin: 'left' });
 ScrollReveal().reveal('.about-me', { delay: 400, origin: 'bottom' });
-
   </script>
 </body>
 </html>
