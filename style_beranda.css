@@ -111,12 +111,13 @@ body {
   padding: 25px 30px;
   max-width: 400px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  animation: fadeIn 1s ease;}
+  animation: fadeIn 1s ease;text-align: center;}
 
 .short-bio h3 {
   color: #1f3c88;
-  margin-bottom: 70px;
-  font-size: 18px;}
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-align: center;}
 .short-bio strong {color: #1a2a45;}
 
 /* Bagian Tentang Saya di bawah */
