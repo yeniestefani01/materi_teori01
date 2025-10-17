@@ -52,38 +52,6 @@ body {
   margin: 60px auto;       /* posisi tengah + jarak atas bawah */
   max-width: 1200px;       /* 💡 ini penting agar ruang ke kanan tersedia */
 }
-
-/* === Kotak Biodata === */
-.bio-box {
-  background: linear-gradient(to bottom right, #f7fbff, #e7f1ff);
-  padding: 25px 40px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 650px;             /* 💡 ini bikin kotak lebih lebar */
-  line-height: 1.7;
-  text-align: justify;
-  color: #1a1a1a;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-/* Judul di dalam kotak */
-.bio-box h3 {
-  font-size: 50px;
-  color: #004aad;
-  display: flex;
-  align-items: center;
-  margin-bottom: 50px;
-}
-
-/* Ikon kotak biru di depan judul */
-.bio-box h3::before {
-  content: "▮";
-  color: #007bff;
-  font-size: 18px;
-  margin-right: 50px;
-}
-
 .image-section img {
   width: 260px;
   height: 260px;
@@ -103,15 +71,10 @@ body {
 }
 /* === Kotak biodata singkat (di samping foto) === */
 .short-bio {
-  padding: 25px 30px; /* tetap beri jarak agar teks tidak mepet */
-  width: 90%;
-  max-width: 1200px;   /* bisa diperlebar karena tidak ada kotak */
-  margin:0 auto;
-  justify-content: center;align-items: center;
-  text-align: center;
-  animation: fadeIn 1s ease;
-  text-align: center;
-}
+  padding: 25px 30px; /* tetap beri jarak agar teks tidak mepet */ width: 90%;
+  max-width: 1200px;   /* bisa diperlebar karena tidak ada kotak */ margin:0 auto;
+  justify-content: center;align-items: center;text-align: center;
+  animation: fadeIn 1s ease;text-align: center;}
 
   /* === Judul di dalam kotak biodata singkat === */
 .short-bio h3 {
