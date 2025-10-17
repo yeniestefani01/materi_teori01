@@ -1,5 +1,5 @@
 
-    /* ===== HERO SECTION ===== */
+    /* =====Bagian atas berisi gambar latar + teks utama ===== */
 .hero { 
   position: relative;
  background: linear-gradient(rgba(51, 106, 173, 0.7), rgba(128, 182, 249, 0.7)),
@@ -10,13 +10,11 @@
   align-items: center;
   justify-content: center;}
 
+/*Lapisan transparan di atas background*/
 .overlay {
-  width: 100%;
-  height: 100%;
-  background: rgba(40, 70, 120, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;}
+  width: 100%;height: 100%;
+  background: rgba(40, 70, 120, 0.5);display: flex;
+  align-items: center;justify-content: center;}
 
 /* ===== BODY ===== */
 body {
@@ -27,6 +25,7 @@ body {
   overflow-x: hidden;}
 
 /* ===== BUTTON ===== */
+/*Tombol biru untuk tautan*/
 .btn-primary {
   background-color: #4da3ff;  /* biru terang */
   color: #fff;
@@ -36,13 +35,12 @@ body {
   font-weight: bold;
   box-shadow: 0 6px 15px rgba(77,163,255,0.4);
   transition: all 0.3s ease;}
-
 .btn-primary:hover {
   background-color: #70b7ff;  /* biru lebih lembut saat hover */
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(77,163,255,0.5);}
 
-
+/*Mengatur agar foto & teks sejajar*/
 .bio-container {
   display: flex;
   justify-content: center; /* posisi tengah horizontal */
@@ -52,6 +50,39 @@ body {
   margin: 60px auto;       /* posisi tengah + jarak atas bawah */
   max-width: 1200px;       /* 💡 ini penting agar ruang ke kanan tersedia */
 }
+
+/* === Kotak Biodata === */
+.bio-box {
+  background: linear-gradient(to bottom right, #f7fbff, #e7f1ff);
+  padding: 25px 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 650px;             /* 💡 ini bikin kotak lebih lebar */
+  line-height: 1.7;
+  text-align: justify;
+  color: #1a1a1a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Judul di dalam kotak */
+.bio-box h3 {
+  font-size: 50px;
+  color: #004aad;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+/* Ikon kotak biru di depan judul */
+.bio-box h3::before {
+  content: "▮";
+  color: #007bff;
+  font-size: 18px;
+  margin-right: 50px;
+}
+
+/*Mengatur ukuran dan bentuk foto profil*/
 .image-section img {
   width: 260px;
   height: 260px;
@@ -87,7 +118,7 @@ body {
 .short-bio p {font-size: 18px; color: #333;line-height: 1.6;}
 
  
-/* Bagian Tentang Saya di bawah */
+/* Kotak teks panjang “Tentang Yeni” */
 .about-me {
   max-width: 900px;
   margin: 0 auto;
