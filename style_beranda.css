@@ -101,25 +101,29 @@ body {
   transform: scale(1.05);
   transition: transform 0.4s ease;
 }
-
+/* === Kotak biodata singkat (di samping foto) === */
 .short-bio {
-  background: linear-gradient(to right, #eaf3ff, #fff8f0);
-  border: 1px solid #d0d8e5;
-  border-radius: 15px;
-  padding: 25px 30px;
-  max-width: 400px;
-  margin: 0 auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 25px 30px; /* tetap beri jarak agar teks tidak mepet */
+  width: 90%;
+  max-width: 1200px;   /* bisa diperlebar karena tidak ada kotak */
+  margin:0 auto;
+  justify-content: center;align-items: center;
+  text-align: center;
   animation: fadeIn 1s ease;
   text-align: center;
 }
-.short-bio h3 {
-  color: #1f3c88;
-  margin-bottom: 10px;
-  font-size: 18px;
-  text-align: center;}
-.short-bio strong {color: #1a2a45;}
 
+  /* === Judul di dalam kotak biodata singkat === */
+.short-bio h3 {
+  color: #1f3c88; /* Warna biru tua */
+  margin-bottom: 10px; /* Jarak bawah kecil antara judul dan paragraf */
+  font-size: 18px;  /* Ukuran teks sedang */
+  text-align: center; }  /* Rata tengah */
+  /* === Warna teks untuk elemen <strong> di dalam biodata === */
+.short-bio strong {color: #1a2a45;} /* Biru gelap agar menonjol */
+.short-bio p {font-size: 18px; color: #333;line-height: 1.6;}
+
+ 
 /* Bagian Tentang Saya di bawah */
 .about-me {
   max-width: 900px;
