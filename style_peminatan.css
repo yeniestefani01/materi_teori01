@@ -3,78 +3,47 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #ffffff; /* bawah putih */
-  color: #333;
-}
+  color: #333;}
 
 /* Bagian header atas */
 .header {
-  background: url("image/header-bg.jpeg") no-repeat center center/cover;
+  background: url("image/klik.jpeg") no-repeat center center/cover;
   color: white;
   padding: 80px 20px;
   text-align: center;
-  border-radius: 0 0 12px 12px;
-}
-header.hero h1 {
-  font-size: 2.5em;
-  margin: 0;
-}
+  border-radius: 0 0 12px 12px;}
+header.hero h1 {font-size: 2.5em;margin: 0;}
 
-header.hero p {
-  font-size: 1.2em;
-  margin-top: 10px;
-}
+header.hero p { font-size: 1.2em;margin-top: 10px;}
 
 /* Navigasi */
 nav {
   background-color: #1c314c; /* biru lebih gelap */
-  text-align: center;
-  padding: 12px 0;
-}
+  text-align: center;padding: 12px 0;}
 
 nav a {
-  color: #ffffff;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
+  color: #ffffff;margin: 0 15px;
+  text-decoration: none;font-weight: bold;}
 
-nav a:hover {
-  color: #ffdd57;
-}
+nav a:hover {color: #ffdd57;}
 
 /* Bagian konten utama */
 main {
-  background-color: #ffffff; /* putih bawah */
-  color: #333;
-  text-align: center;
-  padding: 40px 20px;
-}
+  background-color: #ffffff; /* putih bawah */color: #333;
+  text-align: center;padding: 40px 20px;}
 
-main h2 {
-  margin-bottom: 15px;
-}
+main h2 {margin-bottom: 15px;}
 
 .btn {
-  display: inline-block;
-  background-color: #2e4d73;
-  color: #ffffff;
-  padding: 12px 25px;
-  margin: 10px;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background-color 0.3s;
-}
+  display: inline-block;background-color: #2e4d73;
+  color: #ffffff;padding: 12px 25px;
+  margin: 10px;text-decoration: none;
+  border-radius: 8px;font-weight: bold;
+  transition: background-color 0.3s;}
 
-.btn:hover {
-  background-color: #16324f;
-}
+.btn:hover {background-color: #16324f;}
 
 /* Footer */
-footer {
-  background-color: #2e4d73;
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
-  color: #ffffff;
-}
+footer {background-color: #2e4d73;
+  text-align: center; padding: 15px;
+  margin-top: 40px;color: #ffffff;}
