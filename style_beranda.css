@@ -82,6 +82,8 @@ body {
   margin-bottom: 10px; /* Jarak bawah kecil antara judul dan paragraf */
   font-size: 18px;  /* Ukuran teks sedang */
   text-align: center; }  /* Rata tengah */
+padding-top: 10px;
+  margin-top: 10px;
   /* === Warna teks untuk elemen <strong> di dalam biodata === */
 .short-bio strong {color: #1a2a45;} /* Biru gelap agar menonjol */
 .short-bio p {font-size: 18px; color: #333;line-height: 1.6;}
