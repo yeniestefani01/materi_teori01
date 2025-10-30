@@ -17,20 +17,22 @@ text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
 position: relative;}
 header.hero h1 {font-size: 2.5em;margin: 0;}
 header.hero p { font-size: 1.2em;margin-top: 10px;}
-header.hero {color: white;text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-position: relative;}
+header.hero {color: white;text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);position: relative;}
 
 /* === NAVIGASI MENU === */
 nav {
   background-color: #1c314c; /* warna biru gelap */
   text-align: center; /* link navigasi diletakkan di tengah */
-  padding: 12px 0; /* jarak atas bawah menu */}
+  padding: 12px 0; /* jarak atas bawah menu */
+}
 nav a {
   color: #ffffff; /* warna teks menu */
   margin: 0 15px; /* jarak antar menu */
   text-decoration: none; /* hilangkan garis bawah */
-  font-weight: bold; /* teks ditebalkan */}
-  nav a:hover {color: #ffdd57; /* efek hover (saat diarahkan) */}
+  font-weight: bold; /* teks ditebalkan */
+}
+  nav a:hover {color: #ffdd57; /* efek hover (saat diarahkan) */
+}
 
 /* === BAGIAN UTAMA KONTEN === */
 main {
