@@ -1,50 +1,63 @@
-/* Reset dasar */
+ <style>/* Reset dasar */
+ /* === RESET DASAR UNTUK MENGHILANGKAN MARGIN DEFAULT === */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #ffffff; /* bawah putih */
-  color: #333;}
+  margin: 0; /* hilangkan celah di tepi browser */
+  font-family: Arial, sans-serif; /* jenis font dasar */
+  background-color: #ffffff; /* warna latar belakang halaman */
+  color: #333; /* warna teks default */}
 
-/* Bagian header atas */
+/* === BAGIAN HEADER ATAS (BANNER UTAMA) === */
 .header {
-  background: url("image/klik.jpeg") no-repeat center center/cover;
-  color: white;
-  padding: 80px 20px;
-  text-align: center;
-  border-radius: 0 0 12px 12px;
+  background: url("image/header-bg.jpeg") no-repeat center center/cover; /* gambar latar header */
+  color: white; /* warna teks agar kontras */
+  padding: 80px 20px; /* jarak dalam atas bawah kiri kanan */
+  text-align: center; /* teks rata tengah */
+  border-radius: 0 0 12px 12px; /* sudut bawah membulat */
 text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
 position: relative;
 header.hero h1 {font-size: 2.5em;margin: 0;}
 header.hero p { font-size: 1.2em;margin-top: 10px;}
+header.hero {color: white;text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+position: relative;}
 
-/* Navigasi */
+/* === NAVIGASI MENU === */
 nav {
-  background-color: #1c314c; /* biru lebih gelap */
-  text-align: center;padding: 12px 0;}
-
+  background-color: #1c314c; /* warna biru gelap */
+  text-align: center; /* link navigasi diletakkan di tengah */
+  padding: 12px 0; /* jarak atas bawah menu */
+}
 nav a {
-  color: #ffffff;margin: 0 15px;
-  text-decoration: none;font-weight: bold;}
+  color: #ffffff; /* warna teks menu */
+  margin: 0 15px; /* jarak antar menu */
+  text-decoration: none; /* hilangkan garis bawah */
+  font-weight: bold; /* teks ditebalkan */}
+  nav a:hover {color: #ffdd57; /* efek hover (saat diarahkan) */}
 
-nav a:hover {color: #ffdd57;}
-
-/* Bagian konten utama */
+/* === BAGIAN UTAMA KONTEN === */
 main {
-  background-color: #ffffff; /* putih bawah */color: #333;
-  text-align: center;padding: 40px 20px;}
+  background-color: #ffffff; /* warna latar konten */
+  color: #333; /* warna teks */
+  text-align: center; /* semua isi ditengah */
+  padding: 40px 20px; /* jarak dalam konten */}
+main h2 { margin-bottom: 15px; /* jarak judul dan paragraf */}
 
-main h2 {margin-bottom: 15px;}
-
+/* === TOMBOL PILIHAN MATERI === */
 .btn {
-  display: inline-block;background-color: #2e4d73;
-  color: #ffffff;padding: 12px 25px;
-  margin: 10px;text-decoration: none;
-  border-radius: 8px;font-weight: bold;
-  transition: background-color 0.3s;}
+  display: inline-block; /* supaya bisa diatur jaraknya */
+  background-color: #2e4d73; /* warna dasar tombol */
+  color: #ffffff; /* warna tulisan tombol */
+  padding: 12px 25px; /* ukuran tombol */
+  margin: 10px; /* jarak antar tombol */
+  text-decoration: none; /* hilangkan garis bawah */
+  border-radius: 8px; /* pojok tombol membulat */
+  font-weight: bold; /* teks tombol ditebalkan */
+  transition: background-color 0.3s; /* animasi halus saat hover */}
+.btn:hover {background-color: #16324f; /* warna tombol saat hover */}
 
-.btn:hover {background-color: #16324f;}
-
-/* Footer */
-footer {background-color: #2e4d73;
-  text-align: center; padding: 15px;
-  margin-top: 40px;color: #ffffff;}
+/* === BAGIAN FOOTER === */
+footer {
+  background-color: #2e4d73; /* warna latar footer */
+  text-align: center; /* teks di tengah */
+  padding: 15px; /* jarak dalam footer */
+  margin-top: 40px; /* jarak atas footer dari konten */
+  color: #ffffff; /* warna teks footer */}
