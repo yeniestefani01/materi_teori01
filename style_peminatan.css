@@ -8,7 +8,7 @@ body {
 
 /* === BAGIAN HEADER ATAS (BANNER UTAMA) === */
 .header {
-  background: url("image/header-bg.jpeg") no-repeat center center/cover; /* gambar latar header */
+background: url("image/klik.jpeg") no-repeat center center/cover; /* gambar latar header */
   color: white; /* warna teks agar kontras */
   padding: 80px 20px; /* jarak dalam atas bawah kiri kanan */
   text-align: center; /* teks rata tengah */
