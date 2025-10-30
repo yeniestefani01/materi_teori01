@@ -1,4 +1,5 @@
-  /* === RESET DASAR === */
+<style>
+    /* === RESET DASAR === */
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -102,3 +103,4 @@
       margin-top: 50px;
       font-size: 14px;
     }
+  </style>
