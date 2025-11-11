@@ -1,1 +1,613 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Materi Fisika Teori — Workshop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+   :root{
+  --bg:#0f85b8; /* warna dasar (background utama) */
+  --panel:#43609d; /* warna panel atau kartu */
+  --accent:#e6e9f2; /* warna aksen hijau toska */
+  --muted:rgba(228, 164, 203, 0.75); /* warna teks sekunder (putih agak transparan) */
+  --glass: rgba(127, 126, 168, 0.333);} /* efek transparan (glass look) */
 
+   *{box-sizing:border-box} /* semua elemen menghitung lebar + padding + border (lebih konsisten) */
+
+   body{
+  margin:0; /* hilangkan jarak tepi default */
+  min-height:100vh; /* tinggi minimal = 100% tinggi layar */
+  background:linear-gradient(180deg,#05182c 0%, #083543 60%); /* latar belakang gradasi vertikal */
+  color:#decdcd; /* warna teks putih */
+  display:flex; /* gunakan flexbox untuk tata letak */
+  align-items:center; /* pusatkan vertikal */
+  justify-content:center; /* pusatkan horizontal */
+  padding:40px; } /* jarak isi dari tepi layar */
+   .wrap{
+  width:1100px; /* lebar maksimum konten utama */
+  max-width:96vw;} /* responsif: tidak lebih dari 96% lebar layar */
+    header{
+  display:flex; /* header berisi elemen sejajar horizontal */
+  align-items:center; /* sejajarkan vertikal di tengah */
+  justify-content:space-between; /* beri jarak maksimal antar elemen kiri-kanan */
+  margin-bottom:18px;} /* jarak bawah sebelum konten utama */
+.brand{
+  display:flex; /* logo + teks sejajar horizontal */
+  gap:18px; /* jarak antar elemen dalam .brand */
+  align-items:center;} /* sejajarkan vertikal di tengah */
+    .logo{
+  width:84px; /* lebar logo */
+  height:84px; /* tinggi logo */
+  border-radius:8px; /* sudut agak membulat */
+  background:linear-gradient(135deg,var(--accent),#0f30b3); /* gradasi warna hijau */
+  display:flex; /* pusatkan teks/logo di dalamnya */
+  align-items:center; /* pusatkan vertikal */
+  justify-content:center; /* pusatkan horizontal */
+  font-weight:800; /* teks tebal */
+  color:rgb(4, 27, 27); /* warna teks gelap agar kontras */
+  box-shadow:0 6px 20px rgba(4,10,14,0.6);} /* efek bayangan halus */
+   h1{
+  margin:0; /* hilangkan jarak bawaan */
+  font-size:22px; /* ukuran teks */
+  letter-spacing:0.6px;} /* jarak antar huruf sedikit lebar */
+p.lead{
+  margin:0; /* tanpa jarak ekstra */
+  color:var(--muted); }/* warna abu terang (putih 75%) */
+.cards{
+  display:grid; /* gunakan grid layout untuk menata beberapa kartu */
+  grid-template-columns:1fr; /* satu kolom (bisa diubah jika ingin multi kolom) */
+  gap:18px; }/* jarak antar kartu */
+.card{
+  display:flex; /* isi kartu ditata horizontal (teks di kiri, gambar di kanan) */
+  background:linear-gradient(180deg,var(--panel), rgba(255,255,255,0.02)); /* latar belakang gradasi halus */
+  border-radius:12px; /* sudut membulat */
+  overflow:hidden; /* konten berlebih tersembunyi (agar clip-path rapi) */
+  position:relative; /* agar elemen anak seperti .badge bisa absolute */
+  padding:26px; /* jarak isi dari tepi kartu */
+  align-items:center;} /* sejajarkan isi secara vertikal */
+.card .info{
+  flex:1; /* bagian teks mengambil ruang sisa di sebelah kiri */
+  padding-right:18px;} /* beri jarak dengan gambar di kanan */
+.card h2{
+  margin:0; /* hilangkan margin default judul */
+  font-size:20px;} /* ukuran judul menengah */
+   .meta{
+  color:var(--muted); /* teks berwarna abu terang */
+  margin-top:8px; /* jarak atas kecil dari judul */
+  font-size:14px;} /* ukuran teks kecil */
+.instructor{
+  margin-top:14px; /* jarak atas dari meta */
+  font-size:14px; /* ukuran sedang */
+  color:var(--muted);} /* warna teks sekunder */
+.contact{
+  font-size:13px; /* teks kecil untuk kontak */
+  color:rgba(208, 167, 167, 0.6); /* lebih pudar dari teks utama */
+  margin-top:6px; } /* jarak kecil di atas */
+.card .visual{
+  width:260px; /* lebar area gambar */
+  height:140px; /* tinggi area gambar */
+  flex-shrink:0; /* jangan biarkan area ini mengecil saat layar sempit */
+  margin-left:8px; /* beri jarak dari teks */
+  position:relative;} /* supaya elemen di dalamnya bisa absolute */
+.visual .img{
+  position:absolute; /* isi menempel ke tepi parent (.visual) */
+  inset:0; /* sama dengan top:0; right:0; bottom:0; left:0 */
+  background:linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); /* efek kaca lembut */
+  display:flex; /* untuk pusatkan isi (SVG) */
+  align-items:center; /* tengah vertikal */
+  justify-content:center; /* tengah horizontal */
+  padding:8px; /* jarak dalam */
+  overflow:hidden; /* sembunyikan bagian gambar yang keluar */
+  clip-path:polygon(8% 0,100% 0,92% 100%,0% 100%);} /* potong bentuk sisi miring pada kotak */
+  .visual svg{
+  width:120%; /* perbesar sedikit SVG agar memenuhi area */
+  height:120%;} /* tinggi SVG lebih besar agar tidak ada celah */
+.badge{
+  position:absolute; /* tempelkan di posisi tertentu dalam kartu */
+  right:18px; /* jarak dari sisi kanan kartu */
+  top:18px; /* jarak dari sisi atas kartu */
+  background:rgba(0,0,0,0.25); /* latar belakang semi-transparan */
+  padding:6px 10px; /* ruang dalam badge */
+  border-radius:20px; /* bentuk lonjong (pill) */
+  font-weight:600; /* teks agak tebal */
+  font-size:13px;} /* ukuran teks kecil */
+  footer{
+  margin-top:18px; /* jarak atas dari konten utama */
+  color:var(--muted); /* warna teks pudar */
+  font-size:13px; /* ukuran teks kecil */
+  display:flex; /* tata elemen sejajar horizontal */
+  justify-content:space-between;} /* teks kiri & kanan berjauhan */
+
+ /* Responsive */
+@media (min-width:780px){  /* Jika layar lebih lebar dari 780px */
+  .cards{grid-template-columns:1fr} /* Gunakan 1 kolom untuk kartu */
+  .card{height:160px}} /* Tetapkan tinggi kartu menjadi 160px */
+@media (max-width:720px){  /* Jika layar lebih sempit dari 720px */
+  .card{flex-direction:column;align-items:flex-start;padding:18px} /* Tata ulang isi kartu secara vertikal dan beri padding lebih kecil */
+  .visual{width:100%;height:120px;margin:12px 0 0} /* Gambar melebar penuh di atas kartu */
+  .visual .img{clip-path:none;border-radius:8px} }/* Hilangkan potongan diagonal pada gambar, beri sudut melengkung */
+
+    /* subtle glass lines */
+.sep{  /* Garis pemisah halus antara elemen */
+  height:1px;  /* Ketebalan garis */
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.03),transparent); /* Efek gradasi kaca halus */
+  margin:18px 0;  /* Jarak atas dan bawah */
+  border-radius:1px;}  /* Ujung garis sedikit membulat */
+.cta{  /* Tombol atau tautan ajakan bertindak (Call To Action) */
+  display:inline-block;  /* Supaya tampil seperti tombol */
+  margin-top:12px;  /* Jarak dari elemen atasnya */
+  padding:8px 12px;  /* Ruang dalam tombol */
+  border-radius:8px;  /* Sudut tombol melengkung */
+  background:rgba(255,255,255,0.03); /* Warna latar semi transparan */
+  font-weight:600;  /* Huruf tebal */
+  color:var(--accent);  /* Warna teks sesuai variabel aksen */
+  text-decoration:none;}  /* Hilangkan garis bawah pada teks */
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">FT</div>
+        <div>
+          <h1>FISIKA TEORI</h1>
+          <p class="lead">Kumpulan Materi Laboratorium Teori dan Komputasi Fisika  </p>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div class="badge">Sumber: Materi Kuliah</div>
+      </div>
+    </header>
+
+    <main class="cards">
+
+      <!-- Card 1: Quantum Mechanics -->
+      <section class="card">
+        <div class="info">
+          <h2>Quantum Mechanics </h2>
+          <div class="meta">Rangkuman persamaan Schrödinger, operator, spin, dan teori gangguan</div>
+          <div class="instructor">(nama dosen)</div>
+          <div class="contact">(kontak dosen)</div>
+          <div class="sep"></div>
+          <a class="cta" href="#qm">Lihat Materi</a>
+        </div>
+        <div class="visual">
+          <div class="img">
+            <!-- Wavefunction representation -->
+            <svg viewBox="0 0 200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="0" width="200" height="100" fill="none"/>
+              <g fill="none" stroke="white" stroke-opacity="0.85">
+              <path d="M0,60 C20,20 40,100 60,60 C80,20 100,100 120,60 C140,20 160,100 180,60 C190,40 200,60 200,60" stroke-width="1.6"/>
+                </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- Card 2: Komputasi -->
+<section id="computing" class="card">
+  <div class="info">
+    <h2>Computing</h2>
+    <div class="meta">Pemodelan numerik, simulasi dinamika partikel, pemrograman ilmiah dengan Python dan metode Monte Carlo</div>
+    <div class="instructor">(nama dosen)</div>
+    <div class="contact">(kontak dosen)</div>
+    <div class="sep"></div>
+    <a class="cta" href="#computing">Lihat Materi</a>
+  </div>
+  <div class="visual">
+    <div class="img">
+      <!-- Simulasi data grid -->
+      <svg viewBox="0 0 200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="white" stroke-opacity="0.7" fill="none">
+          <path d="M0,20 L200,20 M0,50 L200,50 M0,80 L200,80" stroke-width="0.5"/>
+          <path d="M50,0 L50,100 M100,0 L100,100 M150,0 L150,100" stroke-width="0.5"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+   <!-- Card 3: Particle Physics -->
+<section id="particle" class="card">
+  <div class="info">
+    <h2>Particle Physics</h2>
+    <div class="meta">Model Standar, interaksi fundamental, mekanika kuantum relatisik, dan fisika partikel elementer</div>
+    <div class="instructor">(nama dosen)</div>
+    <div class="contact">(kontak dosen)</div>
+    <div class="sep"></div>
+    <a class="cta" href="#particle">Lihat Materi</a>
+  </div>
+  <div class="visual">
+    <div class="img">
+      <!-- Colliding particles -->
+      <svg viewBox="0 0 200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="white" stroke-opacity="0.85" fill="none">
+          <path d="M20,50 Q100,20 180,50" stroke-width="1.3"/>
+          <path d="M20,50 Q100,80 180,50" stroke-width="1.3"/>
+          <circle cx="20" cy="50" r="3" fill="white"/>
+          <circle cx="180" cy="50" r="3" fill="white"/>
+          <circle cx="100" cy="50" r="2" fill="white"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+     <!-- Card 4: General Relativity -->
+<section id="gr" class="card">
+  <div class="info">
+    <h2>General Relativity</h2>
+    <div class="meta">
+      Tensor metrik dan koneksi Levi-Civita, persamaan medan Einstein, solusi Schwarzschild dan Kerr,
+      serta fenomena gelombang gravitasi.
+    </div>
+    <div class="instructor">(nama dosen)</div>
+    <div class="contact">(kontak dosen)</div>
+    <div class="sep"></div>
+    <a class="cta" href="#gr">Lihat Materi</a>
+  </div>
+  <div class="visual">
+    <div class="img">
+      <!-- Curved spacetime grid -->
+      <svg viewBox="0 0 200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="well" cx="50%" cy="50%" r="60%">
+            <stop offset="0%" stop-color="white" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="200" height="100" fill="url(#well)"/>
+        <g fill="none" stroke="white" stroke-opacity="0.3">
+          <path d="M0,60 Q50,20 100,60 T200,60" stroke-width="0.8"/>
+          <path d="M0,80 Q50,40 100,80 T200,80" stroke-width="0.8"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Card 5: Kosmologi -->
+<section id="cosmology" class="card">
+  <div class="info">
+    <h2>Kosmologi</h2>
+    <div class="meta">
+      Model alam semesta Friedmann–Lemaître–Robertson–Walker (FLRW), ekspansi kosmik, radiasi latar mikrogelombang kosmik (CMB),
+      materi gelap dan energi gelap, serta evolusi dan struktur skala besar alam semesta.
+    </div>
+    <div class="instructor">(nama dosen)</div>
+    <div class="contact">(kontak dosen)</div>
+    <div class="sep"></div>
+    <a class="cta" href="#cosmology">Lihat Materi</a>
+  </div>
+  <div class="visual">
+    <div class="img">
+      <!-- Expanding universe visual -->
+      <svg viewBox="0 0 200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="white" stroke-opacity="0.85">
+          <circle cx="100" cy="50" r="5" fill="white"/>
+          <circle cx="100" cy="50" r="15" stroke-width="0.8"/>
+          <circle cx="100" cy="50" r="30" stroke-width="0.6" stroke-opacity="0.7"/>
+          <circle cx="100" cy="50" r="45" stroke-width="0.4" stroke-opacity="0.5"/>
+          <path d="M100,50 L190,20 M100,50 L10,80" stroke-width="0.8" stroke-opacity="0.6"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Card 6: Statistical Physics & Thermodynamics -->
+<section id="statistical" class="card">
+  <div class="info">
+    <h2>Statistical Physics & Thermodynamics</h2>
+    <div class="meta">
+      Entropi dan distribusi probabilitas, hukum termodinamika, fluktuasi mikroskopik, 
+      transisi fasa, serta fenomena emergen dalam sistem kompleks.
+    </div>
+    <div class="instructor">(nama dosen)</div>
+    <div class="contact">(kontak dosen)</div>
+    <div class="sep"></div>
+    <a class="cta" href="#statistical">Lihat Materi</a>
+  </div>
+  <div class="visual">
+    <div class="img">
+      <!-- simple svg of random particle motion -->
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="200" height="100" fill="none"/>
+        <g fill="white" fill-opacity="0.85">
+          <circle cx="40" cy="30" r="2"/>
+          <circle cx="80" cy="50" r="1.5"/>
+          <circle cx="120" cy="25" r="1.8"/>
+          <circle cx="160" cy="70" r="2"/>
+          <circle cx="100" cy="60" r="2.3"/>
+          <circle cx="60" cy="80" r="1.4"/>
+          <circle cx="140" cy="40" r="1.6"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Card 7: Solid State Physics -->
+<section id="solidstate" class="card">
+  <div class="info">
+    <h2>Solid State Physics</h2>
+    <div class="meta">
+      Struktur kristal, pita energi elektron, semikonduktor, getaran kisi (fonon), dan fenomena superkonduktivitas.
+    </div>
+    <div class="instructor">(nama dosen)</div>
+    <div class="contact">(kontak dosen)</div>
+    <div class="sep"></div>
+    <a class="cta" href="#solidstate">Lihat Materi</a>
+  </div>
+  <div class="visual">
+    <div class="img">
+      <!-- simple svg of lattice structure -->
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="white" stroke-opacity="0.8" stroke-width="1">
+          <line x1="30" y1="30" x2="70" y2="30"/>
+          <line x1="70" y1="30" x2="110" y2="30"/>
+          <line x1="110" y1="30" x2="150" y2="30"/>
+          <line x1="30" y1="70" x2="70" y2="70"/>
+          <line x1="70" y1="70" x2="110" y2="70"/>
+          <line x1="110" y1="70" x2="150" y2="70"/>
+          <line x1="30" y1="30" x2="30" y2="70"/>
+          <line x1="70" y1="30" x2="70" y2="70"/>
+          <line x1="110" y1="30" x2="110" y2="70"/>
+          <line x1="150" y1="30" x2="150" y2="70"/>
+        </g>
+        <g fill="white">
+          <circle cx="30" cy="30" r="2"/>
+          <circle cx="70" cy="30" r="2"/>
+          <circle cx="110" cy="30" r="2"/>
+          <circle cx="150" cy="30" r="2"/>
+          <circle cx="30" cy="70" r="2"/>
+          <circle cx="70" cy="70" r="2"/>
+          <circle cx="110" cy="70" r="2"/>
+          <circle cx="150" cy="70" r="2"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Card 8: Plasma Physics -->
+<section id="plasma" class="card">
+  <div class="info">
+    <h2>Plasma Physics</h2>
+    <div class="meta">
+      Dinamika partikel bermuatan dalam medan elektromagnetik, gelombang plasma, osilasi Langmuir,
+      dan aplikasi fusi nuklir.
+    </div>
+    <div class="instructor">(nama dosen)</div>
+    <div class="contact">(kontak dosen)</div>
+    <div class="sep"></div>
+    <a class="cta" href="#plasma">Lihat Materi</a>
+  </div>
+  <div class="visual">
+    <div class="img">
+      <!-- svg of magnetic field loops -->
+      <svg aria-hidden="true" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <g fill="none" stroke="white" stroke-opacity="0.85">
+          <path d="M50,50 C50,10 150,10 150,50 C150,90 50,90 50,50Z" stroke-width="1.2"/>
+          <path d="M70,50 C70,25 130,25 130,50 C130,75 70,75 70,50Z" stroke-width="0.9" stroke-opacity="0.7"/>
+          <circle cx="100" cy="50" r="3" fill="white"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Card 9: Astrophysics -->
+<section id="astrophysics" class="card">
+  <div class="info">
+    <h2>Astrophysics</h2>
+    <div class="meta">
+      Evolusi bintang, struktur galaksi, lubang hitam, radiasi elektromagnetik, dan fenomena relativistik kosmik.
+    </div>
+    <div class="instructor">(nama dosen)</div>
+    <div class="contact">(kontak dosen)</div>
+    <div class="sep"></div>
+    <a class="cta" href="#astrophysics">Lihat Materi</a>
+  </div>
+  <div class="visual">
+    <div class="img">
+      <!-- svg of orbiting star -->
+      <svg aria-hidden="true" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <g fill="none" stroke="white" stroke-opacity="0.85">
+          <ellipse cx="100" cy="50" rx="60" ry="30" stroke-width="1"/>
+          <circle cx="100" cy="50" r="3" fill="white"/>
+          <circle cx="160" cy="50" r="2" fill="white" fill-opacity="0.8"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Card 11: Metode Numerik -->
+<section id="metode-numerik" class="card">
+  <div class="info">
+    <h2>Metode Numerik</h2>
+    <div class="meta">
+      Pendekatan komputasi untuk menyelesaikan persamaan diferensial, integrasi numerik,
+      metode iteratif, interpolasi, dan analisis galat.
+    </div>
+    <div class="instructor">(nama dosen)</div>
+    <div class="contact">(kontak dosen)</div>
+    <div class="sep"></div>
+    <a class="cta" href="#metode-numerik">Lihat Materi</a>
+  </div>
+  <div class="visual">
+    <div class="img">
+      <!-- SVG of numerical data curve -->
+      <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <polyline points="10,80 40,60 70,65 100,40 130,45 160,30 190,50" stroke="white" stroke-width="1.5" fill="none"/>
+        <circle cx="40" cy="60" r="2" fill="white"/>
+        <circle cx="100" cy="40" r="2" fill="white"/>
+        <circle cx="160" cy="30" r="2" fill="white"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Card 12: Fisika Matematik -->
+<section id="fisika-matematik" class="card">
+  <div class="info">
+    <h2>Fisika Matematik</h2>
+    <div class="meta">
+      Analisis tensor, fungsi khusus, operator diferensial, teori eigen, serta penerapan pada mekanika dan elektromagnetisme.
+    </div>
+    <div class="instructor">(nama dosen)</div>
+    <div class="contact">(kontak dosen)</div>
+    <div class="sep"></div>
+    <a class="cta" href="#fisika-matematik">Lihat Materi</a>
+  </div>
+  <div class="visual">
+    <div class="img">
+      <!-- SVG of wave contour lines -->
+      <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <g stroke="white" stroke-opacity="0.8" fill="none">
+          <path d="M0,60 Q50,20 100,60 T200,60" stroke-width="1.2"/>
+          <path d="M0,70 Q50,30 100,70 T200,70" stroke-width="0.8" stroke-opacity="0.6"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Card 13: Pengantar Linux -->
+<section id="linux" class="card">
+  <div class="info">
+    <h2>Pengantar Linux</h2>
+    <div class="meta">
+      Sistem operasi open-source, perintah dasar terminal, manajemen file, shell scripting,
+      dan workflow penelitian ilmiah berbasis Linux.
+    </div>
+    <div class="instructor">(nama dosen)</div>
+    <div class="contact">(kontak dosen)</div>
+    <div class="sep"></div>
+    <a class="cta" href="#linux">Lihat Materi</a>
+  </div>
+  <div class="visual">
+    <div class="img">
+      <!-- SVG terminal-like -->
+      <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <rect x="15" y="20" width="170" height="60" rx="6" fill="none" stroke="white" stroke-width="1.2"/>
+        <text x="35" y="55" font-size="12" fill="white">> _</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+<!-- Card 14: Mekanika Kuantum -->
+<section id="mekanika-kuantum" class="card">
+  <div class="info">
+    <h2>Mekanika Kuantum (Lanjut)</h2>
+    <div class="meta">
+      Prinsip superposisi, operator Hermitian, spin, ketidakpastian Heisenberg,
+      serta aplikasi kuantum pada atom dan molekul.
+    </div>
+    <div class="instructor">(nama dosen)</div>
+    <div class="contact">(kontak dosen)</div>
+    <div class="sep"></div>
+    <a class="cta" href="#mekanika-kuantum">Lihat Materi</a>
+  </div>
+  <div class="visual">
+    <div class="img">
+      <!-- SVG of probability wave -->
+      <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,60 C25,10 50,110 75,60 C100,10 125,110 150,60 C175,10 200,110 225,60" stroke="white" fill="none" stroke-width="1.5"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Card 15: Dinamika Nonlinear -->
+<section id="nonlinear" class="card">
+  <div class="info">
+    <h2>Dinamika Nonlinear</h2>
+    <div class="meta">
+      Analisis sistem dinamis, chaos, bifurkasi, peta logistik, dan teori kestabilan Lyapunov.
+    </div>
+    <div class="instructor">(nama dosen)</div>
+    <div class="contact">(kontak dosen)</div>
+    <div class="sep"></div>
+    <a class="cta" href="#nonlinear">Lihat Materi</a>
+  </div>
+  <div class="visual">
+    <div class="img">
+      <!-- SVG strange attractor -->
+      <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M30,70 Q60,30 100,70 T170,70" stroke="white" stroke-width="1.3" fill="none"/>
+        <circle cx="100" cy="70" r="2" fill="white"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Card 16: Pembelajaran Mesin -->
+<section id="machine-learning" class="card">
+  <div class="info">
+    <h2>Pembelajaran Mesin</h2>
+    <div class="meta">
+      Algoritma klasifikasi, regresi, jaringan saraf tiruan, pembelajaran dalam (deep learning),
+      dan penerapannya dalam analisis data ilmiah.
+    </div>
+    <div class="instructor">(nama dosen)</div>
+    <div class="contact">(kontak dosen)</div>
+    <div class="sep"></div>
+    <a class="cta" href="#machine-learning">Lihat Materi</a>
+  </div>
+  <div class="visual">
+    <div class="img">
+      <!-- SVG of neural network -->
+      <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <g stroke="white" stroke-opacity="0.8" fill="none">
+          <circle cx="50" cy="50" r="3" fill="white"/>
+          <circle cx="100" cy="30" r="3" fill="white"/>
+          <circle cx="100" cy="70" r="3" fill="white"/>
+          <circle cx="150" cy="50" r="3" fill="white"/>
+          <path d="M50,50 L100,30 M50,50 L100,70 M100,30 L150,50 M100,70 L150,50"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Card 17: Pengantar Pemrograman Internet -->
+<section id="webprog" class="card">
+  <div class="info">
+    <h2>Pengantar Pemrograman Internet</h2>
+    <div class="meta">
+      Dasar HTML, CSS, JavaScript, komunikasi client–server, dan penerapan antarmuka web untuk sains komputasi.
+    </div>
+    <div class="instructor">(nama dosen)</div>
+    <div class="contact">(kontak dosen)</div>
+    <div class="sep"></div>
+    <a class="cta" href="#webprog">Lihat Materi</a>
+  </div>
+  <div class="visual">
+    <div class="img">
+      <!-- SVG of network nodes -->
+      <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <g stroke="white" stroke-opacity="0.8" fill="white">
+          <circle cx="40" cy="50" r="3"/><circle cx="100" cy="30" r="3"/><circle cx="100" cy="70" r="3"/><circle cx="160" cy="50" r="3"/>
+          <path d="M40,50 L100,30 M40,50 L100,70 M100,30 L160,50 M100,70 L160,50" fill="none"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+    </main>
+
+    <footer>
+      <div>© 2025 Departemen Fisika </div>
+      <div>https://phys.sci.unhas.ac.id/theoretical-and-computation</div>
+    </footer>
+  </div>
+</body>
+</html>
+ 
