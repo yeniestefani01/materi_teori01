@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komunitas Kami - Teman Terbaik</title>
+    <style>
+        :root  /* Variabel warna yang bisa dipakai ulang di seluruh dokumen */
+         {--primary: #223275;   /* Warna utama (biasanya untuk judul, elemen penting) */
+          --secondary: #1d58bc; /* Warna pendukung / gradasi kedua */
+          --accent: #2144f3;    /* Warna aksen untuk highlight, tombol, garis efek */
+          --light: #a3c5e7;     /* Warna latar belakang terang */
+          --dark: #a3c5e7;      /* Warna teks atau elemen gelap (di sini sama dengan light) */
+          --text: #043f7b;      /* Warna teks utama */
+          --muted: #0c3b6a;     /* Warna teks yang sedikit lebih redup */
+          --success: #0df8aa;   /* Warna untuk status sukses/positif */
+          --warning: #efa00d;}   /* Warna untuk status peringatan */
+
+        * {margin: 0; /* Hilangkan margin default elemen */
+            padding: 0; /* Hilangkan padding default elemen */
+            box-sizing: border-box; /* Menghitung padding & border ke dalam width/height */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }/* Font global */
+         body {
+            background-color: var(--light); /* Warna latar belakang halaman */
+            color: var(--text); /* Warna teks utama */
+            line-height: 1.6;} /* Jarak antar baris */
+        .container {
+            max-width: 1200px; /* Lebar maksimum konten */
+            margin: 0 auto; /* Konten ditengah secara horizontal */
+            padding: 0 20px;} /* Spasi kiri-kanan */
+        
+       /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary)); /* Gradasi warna header */
+            color: rgb(166, 185, 242); /* Warna teks di header */
+            padding: 100px 0 60px; /* Padding atas besar, bawah lebih kecil */
+            text-align: center; /* Semua teks rata tengah */
+            position: relative; /* Dibutuhkan jika nanti ada elemen absolute di dalam header */
+            overflow: hidden;} /* Menyembunyikan elemen yang keluar dari area header */
+        header::before {
+           content: ""; /* Membuat elemen pseudo sebelum header */
+           position: absolute; /* Diposisikan relatif terhadap header */
+           top: 0; /* Tempel bagian atas */
+           left: 0; /* Tempel bagian kiri */
+           width: 100%; /* Lebar penuh */
+           height: 100%;} /* Tinggi penuh */
+        .header-content {
+            position: relative; /* Agar berada di atas pseudo-element */
+            z-index: 1;} /* Mengangkat di atas layer header::before */
+        h1 {
+            font-size: 3.5rem; /* Ukuran huruf besar untuk judul */
+            margin-bottom: 20px; /* Spasi bawah judul */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);} /* Bayangan halus supaya lebih terbaca */
+        .tagline {
+            font-size: 1.5rem; /* Ukuran teks tagline */
+            max-width: 800px; /* Lebar maksimum agar tidak terlalu panjang */
+            margin: 0 auto 30px; /* Rata tengah + jarak bawah */
+            font-weight: 300; }/* Tipis agar terlihat elegan */
+        .divider {
+            height: 4px; /* Tinggi garis pembatas */
+            width: 100px; /* Lebar garis */
+            background-color: var(--accent); /* Warna dari variabel utama */
+            margin: 30px auto; /* Tengah secara horizontal */
+            border-radius: 2px;} /* Membuat ujung garis sedikit melengkung */
+        
+        /* Navigation */
+          nav {
+              background-color: white; /* Warna latar belakang navbar */
+              position: sticky; /* Navbar menempel di atas saat scroll */
+              top: 0; /* Menempel pada posisi paling atas viewport */
+              z-index: 100; /* Supaya berada di atas elemen lain */
+              box-shadow: 0 2px 10px rgba(0,0,0,0.1);} /* Bayangan halus di bawah navbar */
+          .nav-container {
+              display: flex; /* Menjadikan isi navbar sejajar horizontal */
+              justify-content: space-between; /* Logo di kiri, menu di kanan */
+              align-items: center; /* Rata tengah secara vertikal */
+              padding: 15px 0;} /* Ruang vertikal atas-bawah */
+          .logo {
+            font-size: 1.8rem; /* Ukuran teks logo */
+            font-weight: bold; /* Logo dibuat tebal */
+            color: var(--primary);} /* Warna memakai variabel utama */
+          .nav-links {
+              display: flex; /* Menampilkan item menu secara horizontal */
+              list-style: none;} /* Menghilangkan bullet default pada <ul> */
+          .nav-links li {
+              margin-left: 30px;} /* Memberi jarak antar item menu */
+          .nav-links a {
+              color: var(--dark); /* Warna teks link */
+              text-decoration: none; /* Menghilangkan garis bawah standar */
+              font-weight: 500; /* Ketebalan sedang */
+              transition: color 0.3s; /* Animasi perubahan warna saat hover */
+              position: relative;} /* Dibutuhkan untuk efek garis bawah (::after) */
+          .nav-links a::after {
+              content: ''; /* Elemen dekorasi garis bawah */
+              position: absolute; /* Diposisikan relatif terhadap link */
+              bottom: -5px; /* Letak garis sedikit di bawah teks */
+              left: 0; /* Mulai dari kiri */
+              width: 0; /* Awal garis diset panjang 0 (untuk animasi) */
+              height: 2px; /* Ketebalan garis */
+              background-color: var(--accent); /* Warna garis memakai warna aksen */
+              transition: width 0.3s;} /* Animasi lebar garis saat hover */
+          .nav-links a:hover {
+              color: var(--primary);} /* Ganti warna teks saat link di-hover */
+          .nav-links a:hover::after {
+              width: 100%;} /* Garis bawah meluas penuh saat hover (efek animasi) */
+
+          /* Section Styles */
+          section {
+              padding: 80px 0;} /* Memberi ruang vertikal besar atas–bawah setiap section */
+          h2 {
+              font-size: 2.5rem; /* Ukuran besar untuk judul section */
+              text-align: center; /* Judul diratakan ke tengah */
+              margin-bottom: 50px; /* Jarak bawah sebelum konten section */
+              color: var(--primary);} /* Warna judul */
+          .section-intro {
+              text-align: center; /* Paragraf pembuka section diratakan tengah */
+              max-width: 800px; /* Membatasi lebar parabaf agar tidak terlalu panjang */
+              margin: 0 auto 50px; /* Ditengah + jarak bawah */
+              font-size: 1.2rem; /* Teks sedikit lebih besar dari normal */
+              color: var(--muted); }/* Warna lebih lembut untuk intro */
+        
+         /* About Section */
+          .about-content {
+              display: flex; /* Menampilkan teks dan gambar berdampingan secara horizontal */
+              align-items: center; /* Menyelaraskan konten secara vertikal di tengah */
+              gap: 50px; }/* Jarak antara teks dan gambar */
+          .about-text {
+              flex: 1;} /* Mengambil 50% ruang (flex grow) untuk teks */
+          .about-image {
+              flex: 1; /* Mengambil 50% ruang untuk gambar */
+              border-radius: 10px; /* Membuat sudut gambar melengkung */
+              overflow: hidden; /* Bagian gambar yang keluar akan tersembunyi */
+              box-shadow: 0 10px 30px rgba(0,0,0,0.1);} /* Bayangan halus untuk efek elevasi */
+          .about-image img {
+              width: 100%; /* Gambar memenuhi lebar container */
+              height: auto; /* Tinggi otomatis untuk menjaga proporsi */
+              display: block;} /* Menghilangkan gap bawah default inline-block image */
+
+        
+          /* Friends Cards */
+          .cards {
+              display: grid; /* Menata kumpulan card menggunakan CSS Grid */
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+              /* Membuat kolom otomatis menyesuaikan ukuran layar.
+                Minimum lebar card 300px, maksimum 1fr (bagi rata). */
+              gap: 30px; /* Jarak antar card */
+              margin-top: 40px;} /* Spasi atas sebelum grid muncul */
+          .card {
+              background: rgb(206, 231, 243); /* Warna latar card */
+              border-radius: 12px; /* Sudut membulat */
+              overflow: hidden; /* Elemen yang keluar akan dipotong */
+              position: relative; /* Untuk efek layering jika diperlukan */
+              box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Bayangan halus */
+              transition: transform 0.3s, box-shadow 0.3s; /* Animasi hover */
+              height: 450px; /* Tinggi card tetap */
+              display: flex; /* Agar layout dalam card fleksibel */
+              flex-direction: column; }/* Konten disusun vertikal */
+          .card:hover {
+              transform: translateY(-10px); /* Mengangkat card saat hover */
+              box-shadow: 0 15px 40px rgba(0,0,0,0.15);} /* Bayangan lebih tebal */
+          .card-image {
+              height: 250px; /* Bagian gambar dengan tinggi tetap */
+              overflow: hidden;} /* Memotong gambar agar tetap dalam frame */
+          .card-image img {
+              width: 100%; /* Gambar memenuhi lebar container */
+              height: 100%; /* Memenuhi tinggi container */
+              object-fit: cover; /* Gambar di-crop supaya proporsional */
+              transition: transform 0.5s; }/* Animasi zoom saat hover */
+          .card:hover .card-image img {
+              transform: scale(1.1);} /* Gambar sedikit diperbesar saat hover */
+
+          .card-content {
+            padding: 20px; /* Ruang bagian dalam card (teks) */
+            flex: 1; /* Mengambil seluruh ruang tersisa setelah area gambar */
+            display: flex; /* Agar konten teks dapat diatur fleksibel */
+            flex-direction: column; /* Menyusun konten secara vertikal */
+            justify-content: space-between; } /* Menjaga jarak antar elemen, bagian bawah dan atas merenggang */
+        .card h3 {
+            font-size: 1.5rem; /* Ukuran judul card */
+            margin-bottom: 10px; /* Spasi bawah sebelum elemen berikutnya */
+            color: var(--primary);} /* Warna judul */
+        .card-role {
+            color: var(--accent); /* Warna highlight untuk jabatan/profesi */
+            font-weight: 500; /* Sedikit tebal */
+            margin-bottom: 10px;} /* Spasi bawah */
+        .card-bio {
+            color: var(--muted); /* Warna teks bio lebih lembut */
+            margin-bottom: 15px; /* Spasi bawah */
+            flex: 1;} /* Membuat bio mengisi area tengah card */
+        .card-social {
+            display: flex; /* Menyusun icon sosial secara horizontal */
+            gap: 10px;}/* Jarak antar icon */
+        .social-icon {
+          width: 36px; /* Lebar ikon sosial berbentuk lingkaran */
+          height: 36px; /* Tinggi ikon */
+          border-radius: 50%; /* Membuat ikon menjadi lingkaran sempurna */
+          background-color: var(--light); /* Warna latar ikon */
+          display: flex; /* Agar ikon (misal SVG/font icon) bisa rata tengah */
+          align-items: center; /* Menyelaraskan ikon secara vertikal ke tengah */
+          justify-content: center; /* Menyelaraskan ikon secara horizontal ke tengah */
+          color: var(--dark); /* Warna ikon */
+          text-decoration: none; /* Menghilangkan underline pada <a> */
+          transition: all 0.3s;} /* Animasi halus untuk hover */
+      .social-icon:hover {
+          background-color: var(--primary); /* Latar berubah saat hover */
+          color: white; /* Ikon menjadi putih saat hover */
+          transform: translateY(-3px); }/* Ikon sedikit terangkat */
+
+      /* Gallery Section */
+      .gallery {
+          display: grid;  /* Menampilkan foto dalam bentuk grid rapi */
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));  /* Membuat banyak kolom yang otomatis menyesuaikan lebar layar. Minimal lebar item 280px, maksimal 1fr (bagi rata). */
+          gap: 20px; /* Jarak antar gambar */
+          margin-top: 40px;} /* Spasi atas sebelum galeri muncul */
+      .gallery-item {
+          height: 250px; /* Tinggi fixed untuk tiap gambar */
+          border-radius: 10px; /* Sudut membulat */
+          overflow: hidden; /* Memotong gambar yang keluar area */
+          position: relative; /* Untuk efek overlay jika ditambahkan */
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);} /* Bayangan halus */
+      .gallery-item img {
+          width: 100%; /* Gambar memenuhi lebar container */
+          height: 100%; /* Memenuhi tinggi container */
+          object-fit: cover; /* Gambar dicrop agar proporsinya tetap dan penuh */
+          transition: transform 0.5s;} /* Animasi zoom saat hover */
+      .gallery-item:hover img {
+          transform: scale(1.1);}/* Gambar diperbesar saat hover */
+      .gallery-overlay {
+        position: absolute; /* Overlay ditempatkan di atas gambar */
+        bottom: 0; /* Menempel di bagian bawah gambar */
+        left: 0;   /* Menempel di kiri */
+        right: 0;  /* Menempel di kanan */
+        background: linear-gradient(transparent, rgba(0,0,0,0.7)); /* Gradasi transparan → hitam transparan untuk efek fade */
+        color: white; /* Warna teks overlay */
+        padding: 20px; /* Ruang di dalam overlay */
+        transform: translateY(100%); /* Overlay tersembunyi (turun ke bawah sepenuhnya) sebelum hover */
+        transition: transform 0.3s; } /* Animasi halus saat muncul */
+      .gallery-item:hover .gallery-overlay {
+          transform: translateY(0); } /* Overlay naik dan tampil saat galeri di-hover */
+
+      /* Memories Section */
+      .memories {
+          background: linear-gradient(135deg, #a3c5e7, #e0e8f4); }/* Gradasi warna lembut untuk section kenangan */
+      .timeline {
+          max-width: 800px; /* Lebar maksimal timeline */
+          margin: 0 auto; /* Ditengah secara horizontal */
+          position: relative;} /* Dibutuhkan untuk pseudo-line vertical */
+      .timeline::before {
+          content: ''; /* Elemen garis tengah timeline */
+          position: absolute; /* Posisi absolut di dalam timeline */
+          left: 50%; /* Posisi di tengah horizontal */
+          top: 0; /* Mulai dari atas */
+          bottom: 0; /* Sampai bawah */
+          width: 4px; /* Ketebalan garis timeline */
+          background-color: var(--primary); /* Warna garis */
+          transform: translateX(-50%); }/* Menggeser sedikit agar benar-benar berada tepat di tengah */
+      .timeline-item {
+        margin-bottom: 50px; /* Jarak antar event timeline */
+        position: relative; /* Dibutuhkan untuk penempatan titik/garis */
+        width: 50%; /* Setiap item mengambil setengah dari lebar timeline */
+        padding: 0 40px; }/* Ruang kiri-kanan agar isi tidak menempel di garis tengah */
+     .timeline-item:nth-child(odd) {
+        left: 0; }/* Item urutan ganjil ditempatkan di sisi kiri garis timeline */
+     .timeline-item:nth-child(even) {
+        left: 50%; }/* Item urutan genap ditempatkan di sisi kanan garis timeline */
+     .timeline-content {
+        background: white; /* Card putih untuk setiap event timeline */
+        padding: 20px; /* Ruang dalam card */
+        border-radius: 10px; /* Sudut melengkung */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Bayangan lembut */
+        position: relative; } /* Supaya elemen seperti titik timeline (pseudo-element) dapat diposisikan */
+      .timeline-content::after 
+      {content: ''; /* Membuat pseudo-elemen kosong yang berfungsi sebagai "panah" kecil di sisi kartu timeline */
+        position: absolute; /* Menempatkan pseudo-elemen secara absolut relatif terhadap .timeline-content */
+        top: 20px;  /* Menentukan posisi vertikal panah, jarak 20px dari bagian atas kartu */
+        width: 20px;
+        height: 20px; /* Ukuran kotak yang nantinya akan diputar menjadi bentuk “diamond/ketupat” */
+        background: white;/* Warna putih agar panah menyatu dengan background kartu timeline */
+        transform: rotate(45deg); }/* Memutar persegi 45 derajat sehingga terlihat seperti panah mengarah ke garis timeline */
+    .timeline-item:nth-child(odd) .timeline-content::after {
+        right: -10px;} /* Untuk item bernomor ganjil (posisi kiri), panah ditempatkan di sisi kanan kartu */
+    .timeline-item:nth-child(even) .timeline-content::after {
+        left: -10px;} /* Untuk item bernomor genap (posisi kanan), panah ditempatkan di sisi kiri kartu */
+    .timeline-date {
+        font-weight: bold; /* Membuat teks tanggal lebih tebal agar menonjol */
+        color: var(--primary);  /* Menggunakan warna utama tema untuk konsistensi desain */
+        margin-bottom: 10px;} /* Memberi jarak antara tanggal dan konten berikutnya di dalam kartu */
+     
+    /* Philosophy Section Styles */
+    .philosophy-content h2 {
+          color: white; /* Warna putih untuk judul agar kontras dengan background gradient */
+          margin-bottom: 15px; /* Jarak bawah judul ke konten quote */
+          font-size: 3rem;} /* Ukuran font yang besar untuk judul section */
+      /* Kotak container untuk quote */
+      .quote-box {
+          max-width: 800px; /* Lebar maksimum kotak quote */
+          margin: 0 auto; /* Posisi tengah secara horizontal */
+          background: rgba(111, 141, 238, 0.251); /* Background semi-transparan putih */
+          padding: 40px; /* Ruang dalam yang nyaman */
+          border-radius: 15px; /* Sudut melengkung untuk efek modern */
+          backdrop-filter: blur(10px); /* Efek blur glassmorphism di belakang */
+          border: 1px solid rgba(130, 117, 247, 0.307); /* Border tipis semi-transparan */ 
+          text-align: center;} /* ← Tambah ini untuk rata tengah konten dalam box */
+      /* Styling untuk teks quote utama */
+      .gold-quote {
+          font-size: 1.8rem; /* Ukuran font besar untuk emphasis */
+          line-height: 1.6; /* Jarak antar baris yang nyaman dibaca */
+          margin-bottom: 20px; /* Jarak bawah ke footer quote */
+          font-weight: 600; /* Ketebalan font semi-bold */
+          font-style: italic;} /* Gaya miring untuk efek kutipan */
+      /* Highlight untuk bagian penting dalam quote */
+      .gold-quote .highlight {
+          color:#3557a1 ; /* Warna hijau dari variabel CSS untuk emphasis */
+          font-weight: 700; /* Lebih tebal dari teks biasa */
+          text-align: center;} /* ← Tambah ini untuk pastikan quote rata tengah */
+      /* Footer di bawah quote untuk keterangan */
+      .quote-author {margin-top: 20px; font-style: italic ; color:#3557a1 ; font-size: 2rem;}
+      .quote-footer {
+          border-top: 1px solid rgba(255, 255, 255, 0.3); /* Garis pemisah atas */
+          padding-top: 20px; /* Jarak atas dari garis pemisah */
+          font-size: 1rem; /* Ukuran font normal */
+    opacity: 0.9;} /* Sedikit transparan untuk efek subtle */
+
+        /* Responsive */
+ @media (max-width: 768px) {
+  h1 {font-size: 2.5rem;} /* Mengecilkan ukuran judul utama di layar kecil agar tidak terlalu besar */
+  .tagline {font-size: 1.2rem;}/* Mengecilkan ukuran tagline agar lebih pas di layar kecil */
+  section {padding: 50px 0;}/* Mengurangi jarak vertikal tiap section agar tidak terlalu panjang di HP */
+  .about-content {flex-direction: column;}/* Mengubah layout dari horizontal → vertikal pada layar kecil */
+  .nav-container {flex-direction: column;}/* Navbar yang awalnya horizontal, berubah menjadi bertumpuk vertikal */
+  .nav-links {
+    margin-top: 15px;/* Memberi jarak antara logo dan links */
+    flex-wrap: wrap;/* Jika link navbar banyak, mereka akan turun ke baris berikutnya */
+    justify-content: center;}/* Menyusun link navbar ke posisi tengah */
+  .nav-links li {margin: 5px 10px;}/* Memberi jarak antar item navbar agar tidak berhimpitan */
+  .timeline::before {left: 20px;}/* Garis timeline (yang di tengah) dipindah ke kiri pada layar kecil */
+  .timeline-item {
+    width: 100%;/* Setiap item timeline memenuhi seluruh lebar layar */
+    left: 0 !important;/* Menghilangkan posisi kiri/kanan alternasi supaya semuanya sejajar kiri */
+    padding-left: 50px;/* Memberi ruang untuk garis timeline di kiri */
+    padding-right: 20px;}/* Jarak kanan agar konten tidak mepet */
+  .timeline-content::after {
+    left: -10px !important;/* Segitiga penunjuk selalu muncul di kiri */
+    right: auto !important;}/* Memastikan gaya 'right' tidak aktif di layar kecil */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">SahabatKita</div>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Beranda</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header id="home">
+        <div class="container">
+            <div class="header-content">
+                <h1>Teori Kita</h1>
+                <div class="divider"></div>
+                <p class="tagline">Berteman, Berbagi, dan Menciptakan Kenangan Bersama</p>
+                <p>Sejak 2025, kami telah menjadi keluarga yang saling mendukung dalam setiap langkah kehidupan.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>Teman-Teman Teori </h2>
+            <p class="section-intro">“Kenalin, ini teman-teman saya di Lab Teori Fisika: tim yang selalu seru diajak mikir bareng, eksplor teori, dan ngerjain riset sampai dapet hasil terbaik.”
+            <div class="about-content">
+               <div class="about-text">
+                  <p>Circle kami terbentuk sejak kami sama-sama memilih peminatan Fisika Teori. Awalnya hanya sering ketemu di kelas dan belajar bareng, tapi lama-kelamaan jadi kelompok solid yang saling nge-support dalam perjalanan akademik.</p>
+                  <br>
+                  <p>Dari ngerjain tugas mata kuliah teori yang penuh tantangan, diskusi panjang sampai malam, sampai saling bantu memahami konsep yang rumit, kami selalu jalan bareng. Setiap ada waktu luang pun, kami biasanya kumpul buat cerita, sharing insight, atau sekadar rehat dari rutinitas kampus.</p>
+                  <br>
+                  <p>Kami tetap berpegang pada nilai yang penting: kejujuran, saling dukung, menghargai perbedaan cara berpikir, dan komitmen untuk tumbuh bersama sebagai mahasiswa fisika yang sedang menapaki jalur teori.</p>
+              </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Foto kelompok kami">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Friends Section -->
+    <section id="friends">
+        <div class="container">
+            <p class="section-intro">Kenali para teman-teman teori 2023 kami yang membuat setiap momen menjadi spesial.</p>
+            
+            <div class="cards">
+                <!-- Friend 1 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Rizki">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>Elviana</h3>
+                            <div class="card-role">Si Admin IG Teori</div>
+                            <p class="card-bio">Software engineer dengan passion di bidang AI. Selalu punya ide kreatif untuk kegiatan kami.</p>
+                        </div>
+                        <div class="card-social">
+                            <a href="#" class="social-icon">IG</a>
+                            <a href="#" class="social-icon">FB</a>
+                            <a href="#" class="social-icon">IN</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Friend 2 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Sari">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>Nurhaliza</h3>
+                            <div class="card-role">On-Mipa On Point</div>
+                            <p class="card-bio">Project manager yang terorganisir. Bertanggung jawab merencanakan semua acara kita.</p>
+                        </div>
+                        <div class="card-social">
+                            <a href="#" class="social-icon">IG</a>
+                            <a href="#" class="social-icon">FB</a>
+                            <a href="#" class="social-icon">IN</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Friend 3 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Andi">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>Citra Fikirah Jamal</h3>
+                            <div class="card-role">Si ...</div>
+                            <p class="card-bio">Content creator dengan selera humor tinggi. Tidak pernah membiarkan suasana jadi membosankan.</p>
+                        </div>
+                        <div class="card-social">
+                            <a href="#" class="social-icon">IG</a>
+                            <a href="#" class="social-icon">FB</a>
+                            <a href="#" class="social-icon">IN</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Friend 4 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Dina">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>Yeni Estefani</h3>
+                            <div class="card-role">COMEL</div>
+                            <p class="card-bio">Psikolog yang selalu siap mendengarkan cerita kita. Tempat curhat terbaik untuk semua anggota.</p>
+                        </div>
+                        <div class="card-social">
+                            <a href="#" class="social-icon">IG</a>
+                            <a href="#" class="social-icon">FB</a>
+                            <a href="#" class="social-icon">IN</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Friend 5 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Dina">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>santri</h3>
+                            <div class="card-role">kalem abizz</div>
+                            <p class="card-bio">Psikolog yang selalu siap mendengarkan cerita kita. Tempat curhat terbaik untuk semua anggota.</p>
+                        </div>
+                        <div class="card-social">
+                            <a href="#" class="social-icon">IG</a>
+                            <a href="#" class="social-icon">FB</a>
+                            <a href="#" class="social-icon">IN</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Friend 6 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Dina">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>Angga Anugrah</h3>
+                            <div class="card-role">korpala only one</div>
+                            <p class="card-bio">Psikolog yang selalu siap mendengarkan cerita kita. Tempat curhat terbaik untuk semua anggota.</p>
+                        </div>
+                        <div class="card-social">
+                            <a href="#" class="social-icon">IG</a>
+                            <a href="#" class="social-icon">FB</a>
+                            <a href="#" class="social-icon">IN</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Friend 7 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Dina">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>Elizabet</h3>
+                            <div class="card-role">kicik</div>
+                            <p class="card-bio">Psikolog yang selalu siap mendengarkan cerita kita. Tempat curhat terbaik untuk semua anggota.</p>
+                        </div>
+                        <div class="card-social">
+                            <a href="#" class="social-icon">IG</a>
+                            <a href="#" class="social-icon">FB</a>
+                            <a href="#" class="social-icon">IN</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Friend 8 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Dina">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>Muhammad Ibrahim</h3>
+                            <div class="card-role">Ketum katanya</div>
+                            <p class="card-bio">Psikolog yang selalu siap mendengarkan cerita kita. Tempat curhat terbaik untuk semua anggota.</p>
+                        </div>
+                        <div class="card-social">
+                            <a href="#" class="social-icon">IG</a>
+                            <a href="#" class="social-icon">FB</a>
+                            <a href="#" class="social-icon">IN</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Friend 9 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Dina">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>Deby Lebryawati</h3>
+                            <div class="card-role">gondrong kita</div>
+                            <p class="card-bio">Psikolog yang selalu siap mendengarkan cerita kita. Tempat curhat terbaik untuk semua anggota.</p>
+                        </div>
+                        <div class="card-social">
+                            <a href="#" class="social-icon">IG</a>
+                            <a href="#" class="social-icon">FB</a>
+                            <a href="#" class="social-icon">IN</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Friend 10 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Dina">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3>Nur Fadli Yoga N.</h3>
+                            <div class="card-role">"no komen"</div>
+                            <p class="card-bio">Psikolog yang selalu siap mendengarkan cerita kita. Tempat curhat terbaik untuk semua anggota.</p>
+                        </div>
+                        <div class="card-social">
+                            <a href="#" class="social-icon">IG</a>
+                            <a href="#" class="social-icon">FB</a>
+                            <a href="#" class="social-icon">IN</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <h2>Galeri Kenangan</h2>
+            <p class="section-intro">Momen-momen berharga yang telah kami lalui bersama.</p>
+            
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Liburan bersama">
+                    <div class="gallery-overlay">
+                        <h3>Liburan Akhir Tahun</h3>
+                        <p>Bali, Desember 2022</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1541336032412-2048a678540d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Kumpul-kumpul">
+                    <div class="gallery-overlay">
+                        <h3>Nongkrip Akhir Pekan</h3>
+                        <p>Kafe Favorit, Agustus 2023</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Hiking">
+                    <div class="gallery-overlay">
+                        <h3>Petualangan Mendaki</h3>
+                        <p>Gunung Gede, Mei 2023</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Konser">
+                    <div class="gallery-overlay">
+                        <h3>Konser Musik</h3>
+                        <p>Jakarta, Maret 2023</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Festival">
+                    <div class="gallery-overlay">
+                        <h3>Festival Kuliner</h3>
+                        <p>Bandung, Oktober 2022</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Rapat">
+                    <div class="gallery-overlay">
+                        <h3>Rapat Perencanaan</h3>
+                        <p>Kantor Sari, Juli 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memories Section -->
+    <section id="memories" class="memories">
+        <div class="container">
+            <h2>LabTeoriChronicles</h2>
+            <p class="section-intro">Perjalanan persahabatan kami dari masa ke masa.</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Semester 1-2</div>
+                        <h3>From Awkward to Awesome</h3>
+                        <p>Kami bertemu pertama kali di orientasi mahasiswa baru. Awalnya canggung, tapi akhirnya menjadi awal pertemannan yang baik.🙌</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">semester 3</div>
+                       <h3>Lab Exploration: Finding Our Vibe</h3>
+                        <p>"Program magang dan lab tour bikin kami nyobain langsung vibe riset sehari-hari di empat lab andalan: Elis, Optik, Teori, dan Material. Tiap lab punya karakter dan challenge-nya masing-masing, 
+                          dan experience ini jadi bekal priceless buat journey akademik kami ke depan! 🔬✨"</p>
+                </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">semester 4</div>
+                        <h3>Official Member: Masuk Dunia Teori</h3>
+                        <p>"Alhamdulillah akhirnya jadi member Lab Teori! 
+                          Untuk starter pack-nya, lagi ambil Metnum sama Kapsel sebagai foundation. Semoga bisa keep up! 🚀""</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Semester 5</div>
+                        <h3>Deep Dive: Theory Mode Activated</h3>
+                        <p>"Semester 5 kita masuk fase 'theory mode activated'! 
+                          Delapan mata kuliah khusus teori jadi main course kita - finally deep dive ke 
+                          dunia fisika murni yang selama ini kita tunggu-tunggu. The real theory journey begins now! 📚💫"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- Philosophy Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="philosophy-content">
+                <h2>Filosofi Kita</h2>
+                <div class="quote-box">
+                    <blockquote class="gold-quote">
+                        "Bukan kecepatan awal, tapi momentum yang bertahan hingga finish. 
+                        <span class="highlight">Accelerate terus sampai mencapai escape velocity!</span>"
+                    </blockquote>
+                    <div class="quote-author">- Arenia Rose</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
