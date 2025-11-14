@@ -57,15 +57,17 @@ p.lead{
 .cards{
   display:grid; /* gunakan grid layout untuk menata beberapa kartu */
   grid-template-columns:1fr; /* satu kolom (bisa diubah jika ingin multi kolom) */
-  gap:18px; }/* jarak antar kartu */
+  gap:18px;} /* jarak antar kartu */
 .card{
   display:flex; /* isi kartu ditata horizontal (teks di kiri, gambar di kanan) */
   background:linear-gradient(180deg,var(--panel), rgba(255,255,255,0.02)); /* latar belakang gradasi halus */
   border-radius:12px; /* sudut membulat */
   overflow:hidden; /* konten berlebih tersembunyi (agar clip-path rapi) */
   position:relative; /* agar elemen anak seperti .badge bisa absolute */
-  padding:26px; /* jarak isi dari tepi kartu */
-  align-items:center;} /* sejajarkan isi secara vertikal */
+  padding: 40px 26px; /* jarak isi dari tepi kartu */
+  align-items:center;/* sejajarkan isi secara vertikal */
+  min-height: 450px; /* Minimum height, bisa tumbuh sesuai konten */
+  height: auto;} /* Tinggi menyesuaikan konten */
 .card .info{
   flex:1; /* bagian teks mengambil ruang sisa di sebelah kiri */
   padding-right:18px;} /* beri jarak dengan gambar di kanan */
