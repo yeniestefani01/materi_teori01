@@ -19,6 +19,48 @@
     background-attachment: fixed; /* Membuat gambar tetap diam saat halaman di-scroll */
     background-repeat: no-repeat; /* Mencegah gambar diulang-ulang */
     position: relative;} /* Membuat konteks positioning untuk elemen anak */
+
+      /* Navigation */
+          nav {
+              background-color: white; /* Warna latar belakang navbar */
+              position: sticky; /* Navbar menempel di atas saat scroll */
+              top: 0; /* Menempel pada posisi paling atas viewport */
+              z-index: 100; /* Supaya berada di atas elemen lain */
+              box-shadow: 0 2px 10px rgba(0,0,0,0.1);} /* Bayangan halus di bawah navbar */
+          .nav-container {
+              display: flex; /* Menjadikan isi navbar sejajar horizontal */
+              justify-content: space-between; /* Logo di kiri, menu di kanan */
+              align-items: center; /* Rata tengah secara vertikal */
+              padding: 15px 0;} /* Ruang vertikal atas-bawah */
+          .logo {
+            font-size: 1.8rem; /* Ukuran teks logo */
+            font-weight: bold; /* Logo dibuat tebal */
+            color: var(--primary);} /* Warna memakai variabel utama */
+          .nav-links {
+              display: flex; /* Menampilkan item menu secara horizontal */
+              list-style: none;} /* Menghilangkan bullet default pada <ul> */
+          .nav-links li {
+              margin-left: 30px;} /* Memberi jarak antar item menu */
+          .nav-links a {
+              color: var(--dark); /* Warna teks link */
+              text-decoration: none; /* Menghilangkan garis bawah standar */
+              font-weight: 500; /* Ketebalan sedang */
+              transition: color 0.3s; /* Animasi perubahan warna saat hover */
+              position: relative;} /* Dibutuhkan untuk efek garis bawah (::after) */
+          .nav-links a::after {
+              content: ''; /* Elemen dekorasi garis bawah */
+              position: absolute; /* Diposisikan relatif terhadap link */
+              bottom: -5px; /* Letak garis sedikit di bawah teks */
+              left: 0; /* Mulai dari kiri */
+              width: 0; /* Awal garis diset panjang 0 (untuk animasi) */
+              height: 2px; /* Ketebalan garis */
+              background-color: var(--accent); /* Warna garis memakai warna aksen */
+              transition: width 0.3s;} /* Animasi lebar garis saat hover */
+          .nav-links a:hover {
+              color: var(--primary);} /* Ganti warna teks saat link di-hover */
+          .nav-links a:hover::after {
+              width: 100%;} /* Garis bawah meluas penuh saat hover (efek animasi) */
+     
         /* Container utama */
 .container {
      max-width: 1200px;  /* Membatasi lebar maksimum konten */
@@ -119,6 +161,16 @@ h1 {font-size: 2rem;}}              /* Mengurangi ukuran font judul di device ke
     </style>
 </head>
 <body>
+     <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">SahabatKita</div>
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Beranda</a><li>
+                <li><a href="#about">Tentang Kami</a></li>
+            </ul>
+        </div>
+    </nav>
     <div class="container">
         <!-- Header dengan judul utama -->
         <header>
