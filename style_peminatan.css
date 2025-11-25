@@ -20,19 +20,22 @@ header.hero p { font-size: 1.2em;margin-top: 10px;}
 header.hero {color: white;text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);position: relative;}
 
 /* === NAVIGASI MENU === */
-nav {
-  background-color: #1c314c; /* warna biru gelap */
+nav {background-color: #1c314c; /* warna biru gelap */
   text-align: center; /* link navigasi diletakkan di tengah */
-  padding: 12px 0; /* jarak atas bawah menu */
-}
-nav a {
-  color: #ffffff; /* warna teks menu */
+  padding: 12px 0;} /* jarak atas bawah menu */
+nav a { color: #ffffff; /* warna teks menu */
   margin: 0 15px; /* jarak antar menu */
   text-decoration: none; /* hilangkan garis bawah */
-  font-weight: bold; /* teks ditebalkan */
+  font-weight: bold; }/* teks ditebalkan */
+  nav a:hover {color: #ffdd57;} /* efek hover (saat diarahkan) */
+
+.desc {
+  margin-top: -10px; 
+  margin-bottom: 20px;
+  color: #ccc; /* optional */
+  font-size: 0.95em; /* sedikit lebih kecil */
 }
-  nav a:hover {color: #ffdd57; /* efek hover (saat diarahkan) */
-}
+
 
 /* === BAGIAN UTAMA KONTEN === */
 main {
@@ -54,6 +57,93 @@ main h2 { margin-bottom: 15px; /* jarak judul dan paragraf */}
   font-weight: bold; /* teks tombol ditebalkan */
   transition: background-color 0.3s; /* animasi halus saat hover */}
 .btn:hover {background-color: #16324f; /* warna tombol saat hover */}
+* === CARD SECTION === */
+.card {
+  background: #ffffff; /* warna latar kartu (putih bersih) */
+  padding: 25px 22px; /* jarak isi ke tepi */
+  margin: 25px auto; /* jarak antar kartu + posisikan di tengah */
+  width: 88%; /* lebar responsif */
+  max-width: 750px; /* batas maksimum lebar kartu */
+
+  border-radius: 14px; /* sudut melengkung */
+  border: 1px solid #d9dde6; /* garis pinggir abu lembut */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06); /* bayangan kecil */
+
+  text-align: left; /* teks rata kiri */
+  color: #1c2741; /* warna teks navy elegan */
+
+  transition: 0.25s ease; /* animasi lembut saat hover */
+}
+
+/* Efek hover aesthetic lembut */
+.card:hover {
+  transform: translateY(-4px); /* naik sedikit saat disentuh */
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08); /* bayangan lebih besar */
+}
+
+/* Judul card */
+.card h2 {
+  margin-top: 0; /* hilangkan margin atas */
+  font-size: 1.45rem; /* ukuran judul */
+  font-weight: 700; /* judul tebal */
+  color: #1c2741; /* navy gelap */
+  margin-bottom: 12px; /* jarak ke paragraf/list */
+}
+
+/* Paragraf dalam card */
+.card p {
+  font-size: 1rem; /* ukuran teks paragraf */
+  color: #2f3e61; /* navy muda */
+  line-height: 1.55; /* spasi antar baris */
+}
+
+/* List dalam card */
+.card ul {
+  padding-left: 20px; /* jarak bullet ke kiri */
+  margin-top: 8px; /* jarak dari judul */
+  color: #2f3e61; /* navy lembut */
+}
+
+.card ul li {
+  margin-bottom: 6px; /* jarak antar item */
+  line-height: 1.5; /* spasi baris */
+}
+
+/* ANIMASI MASUK */
+@keyframes fadeSlide {
+  0% {
+    opacity: 0; /* awalnya transparan */
+    transform: translateY(20px); /* muncul dari bawah */
+  }
+  100% {
+    opacity: 1; /* tampil penuh */
+    transform: translateY(0); /* kembali ke posisi */
+  }
+}
+
+.card {
+  animation: fadeSlide 0.6s ease-out forwards; /* jalankan animasi muncul */
+  transition: transform 0.25s ease, box-shadow 0.25s ease; /* transisi hover */
+}
+
+/* HOVER EFEK */
+.card:hover {
+  transform: translateY(-6px); /* efek melayang */
+  box-shadow: 
+    0 0 12px rgba(20,30,70,0.25), /* glow navy lembut */
+    0 8px 18px rgba(0,0,0,0.15); /* bayangan tambahan */
+}
+
+
+
+/* === BAGIAN FOOTER === */
+footer {
+  background-color: #2e4d73; /* warna latar footer */
+  text-align: center; /* teks di tengah */
+  padding: 15px; /* jarak dalam footer */
+  margin-top: 40px; /* jarak atas footer dari konten */
+  color: #ffffff; /* warna teks footer */}
+
 
 /* === BAGIAN FOOTER === */
 footer {
