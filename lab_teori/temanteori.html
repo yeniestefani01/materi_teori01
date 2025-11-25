@@ -103,6 +103,9 @@
               color: var(--primary);} /* Ganti warna teks saat link di-hover */
           .nav-links a:hover::after {
               width: 100%;} /* Garis bawah meluas penuh saat hover (efek animasi) */
+        .nav ul { list-style: none;padding: 0; display: flex; gap: 18px; justify-content: center;}
+        .nav a {text-decoration: none;color: #1c2741;font-weight: 600;}
+        .nav a:hover {color: #3b4f78;}
 
           /* Section Styles */
           section {
@@ -347,14 +350,16 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
-       <div class="container nav-container">
-  <nav><a href="index.html">🏠 Beranda</a></nav>
-  <nav><a href="materi.html">📚 Materi</a></nav>
-  <nav><a href="peminatan.html">🔭 Peminatan</a></nav>
-  <nav><a href="temanteori.html" class="active">👥 Teman Teori</a></nav>
-    </div>
-    </nav>
+    <nav class="nav">
+  <ul>
+    <li><a href="/materi_teori01/index.html">Beranda</a></li>
+    <li><a href="/materi_teori01/peminatan.html">Peminatan</a></li>
+    <li><a href="/materi_teori01/kontak.html">Kontak</a></li>
+    <li><a href="/materi_teori01/lab_teori/temanteori.html">Teman Teori</a></li>
+    <li><a href="/materi_teori01/lab_teori/materi_fisika.html">Materi Fisika</a></li>
+  </ul>
+</nav>
+
 
     <!-- Header Section -->
     <header id="home">
