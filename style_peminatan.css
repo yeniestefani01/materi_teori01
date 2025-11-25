@@ -51,7 +51,7 @@ main h2 { margin-bottom: 15px; /* jarak judul dan paragraf */}
   text-decoration: none; /* hilangkan garis bawah */
   border-radius: 8px; /* pojok tombol membulat */
   font-weight: bold; /* teks tombol ditebalkan */
-  transition: background-color 0.3s; /* animasi halus saat hover */}
+  transition: background-color 0.3s;} /* animasi halus saat hover */
 .btn:hover {background-color: #16324f; /* warna tombol saat hover */}
 
 * === CARD SECTION === */
@@ -112,5 +112,5 @@ footer {
   text-align: center; /* teks di tengah */
   padding: 15px; /* jarak dalam footer */
   margin-top: 40px; /* jarak atas footer dari konten */
-  color: #ffffff;{ /* warna teks footer */
+  color: #ffffff;} /* warna teks footer */
 
