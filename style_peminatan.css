@@ -28,12 +28,10 @@ nav a { color: #ffffff; /* warna teks menu */
   text-decoration: none; /* hilangkan garis bawah */
   font-weight: bold; }/* teks ditebalkan */
   nav a:hover {color: #ffdd57;} /* efek hover (saat diarahkan) */
-.desc {
-  margin-top: 0px; 
+.desc { margin-top: 0px; 
   margin-bottom: 10px;
   color: #162382; /* optional */
-  font-size: 1em; /* sedikit lebih kecil */
-}
+  font-size: 1em;} /* sedikit lebih kecil */
 
 /* === BAGIAN UTAMA KONTEN === */
 main {
@@ -71,65 +69,42 @@ main h2 { margin-bottom: 15px; /* jarak judul dan paragraf */}
   transition: 0.25s ease;} /* animasi lembut saat hover */
 
 /* Efek hover aesthetic lembut */
-.card:hover {
-  transform: translateY(-4px); /* naik sedikit saat disentuh */
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08); /* bayangan lebih besar */
-}
+.card:hover {transform: translateY(-4px); /* naik sedikit saat disentuh */
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);} /* bayangan lebih besar */
 
 /* Judul card */
-.card h2 {
-  margin-top: 0; /* hilangkan margin atas */
+.card h2 {margin-top: 0; /* hilangkan margin atas */
   font-size: 1.45rem; /* ukuran judul */
   font-weight: 700; /* judul tebal */
   color: #1c2741; /* navy gelap */
-  margin-bottom: 12px; /* jarak ke paragraf/list */
-}
+  margin-bottom: 12px;} /* jarak ke paragraf/list */
 
 /* Paragraf dalam card */
-.card p {
-  font-size: 1rem; /* ukuran teks paragraf */
+.card p {font-size: 1rem; /* ukuran teks paragraf */
   color: #2f3e61; /* navy muda */
-  line-height: 1.55; /* spasi antar baris */
-}
+  line-height: 1.55;} /* spasi antar baris */
 
 /* List dalam card */
-.card ul {
-  padding-left: 20px; /* jarak bullet ke kiri */
+.card ul { padding-left: 20px; /* jarak bullet ke kiri */
   margin-top: 8px; /* jarak dari judul */
-  color: #2f3e61; /* navy lembut */
-}
-
-.card ul li {
-  margin-bottom: 6px; /* jarak antar item */
-  line-height: 1.5; /* spasi baris */
-}
+  color: #2f3e61;} /* navy lembut */
+.card ul li {margin-bottom: 6px; /* jarak antar item */
+  line-height: 1.5;} /* spasi baris */
 
 /* ANIMASI MASUK */
 @keyframes fadeSlide {
-  0% {
-    opacity: 0; /* awalnya transparan */
-    transform: translateY(20px); /* muncul dari bawah */
-  }
-  100% {
-    opacity: 1; /* tampil penuh */
-    transform: translateY(0); /* kembali ke posisi */
-  }
-}
-
-.card {
-  animation: fadeSlide 0.6s ease-out forwards; /* jalankan animasi muncul */
-  transition: transform 0.25s ease, box-shadow 0.25s ease; /* transisi hover */
-}
+  0% {opacity: 0; /* awalnya transparan */
+    transform: translateY(20px)}; /* muncul dari bawah */
+  100% {opacity: 1; /* tampil penuh */
+    transform: translateY(0);}} /* kembali ke posisi */
+.card {animation: fadeSlide 0.6s ease-out forwards; /* jalankan animasi muncul */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;} /* transisi hover */
 
 /* HOVER EFEK */
-.card:hover {
-  transform: translateY(-6px); /* efek melayang */
+.card:hover {transform: translateY(-6px); /* efek melayang */
   box-shadow: 
     0 0 12px rgba(20,30,70,0.25), /* glow navy lembut */
-    0 8px 18px rgba(0,0,0,0.15); /* bayangan tambahan */
-}
-
-
+    0 8px 18px rgba(0,0,0,0.15);} /* bayangan tambahan */
 
 /* === BAGIAN FOOTER === */
 footer {
@@ -137,13 +112,5 @@ footer {
   text-align: center; /* teks di tengah */
   padding: 15px; /* jarak dalam footer */
   margin-top: 40px; /* jarak atas footer dari konten */
-  color: #ffffff; /* warna teks footer */}
+  color: #ffffff;{ /* warna teks footer */
 
-
-/* === BAGIAN FOOTER === */
-footer {
-  background-color: #2e4d73; /* warna latar footer */
-  text-align: center; /* teks di tengah */
-  padding: 15px; /* jarak dalam footer */
-  margin-top: 40px; /* jarak atas footer dari konten */
-  color: #ffffff; /* warna teks footer */}
