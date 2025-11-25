@@ -20,10 +20,28 @@
             padding: 0; /* Hilangkan padding default elemen */
             box-sizing: border-box; /* Menghitung padding & border ke dalam width/height */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }/* Font global */
-         body {
-            background-color: var(--light); /* Warna latar belakang halaman */
-            color: var(--text); /* Warna teks utama */
-            line-height: 1.6;} /* Jarak antar baris */
+        body {
+    background: #0c0f1c;
+    color: #e6e6ff;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: transparent;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, white 50%, transparent),
+        radial-gradient(1px 1px at 80% 30%, white 40%, transparent),
+        radial-gradient(1.2px 1.2px at 50% 70%, white 30%, transparent),
+        radial-gradient(1px 1px at 30% 90%, white 30%, transparent);
+    background-repeat: no-repeat;
+}
+
         .container {
             max-width: 1200px; /* Lebar maksimum konten */
             margin: 0 auto; /* Konten ditengah secara horizontal */
