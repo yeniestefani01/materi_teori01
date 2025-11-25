@@ -54,7 +54,7 @@ main h2 { margin-bottom: 15px; /* jarak judul dan paragraf */}
   transition: background-color 0.3s;} /* animasi halus saat hover */
 .btn:hover {background-color: #16324f; /* warna tombol saat hover */}
 
-* === CARD SECTION === */
+/* === CARD SECTION === */
 .card {
   background: #ffffff; /* warna latar kartu (putih bersih) */
   padding: 25px 22px; /* jarak isi ke tepi */
@@ -67,41 +67,45 @@ main h2 { margin-bottom: 15px; /* jarak judul dan paragraf */}
   text-align: left; /* teks rata kiri */
   color: #1c2741; /* warna teks navy elegan */
   transition: 0.25s ease;} /* animasi lembut saat hover */
-
 /* Efek hover aesthetic lembut */
-.card:hover {transform: translateY(-4px); /* naik sedikit saat disentuh */
+.card:hover {
+  transform: translateY(-4px); /* naik sedikit saat disentuh */
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);} /* bayangan lebih besar */
-
 /* Judul card */
-.card h2 {margin-top: 0; /* hilangkan margin atas */
+.card h2 {
+  margin-top: 0; /* hilangkan margin atas */
   font-size: 1.45rem; /* ukuran judul */
   font-weight: 700; /* judul tebal */
   color: #1c2741; /* navy gelap */
   margin-bottom: 12px;} /* jarak ke paragraf/list */
-
 /* Paragraf dalam card */
-.card p {font-size: 1rem; /* ukuran teks paragraf */
+.card p {
+  font-size: 1rem; /* ukuran teks paragraf */
   color: #2f3e61; /* navy muda */
   line-height: 1.55;} /* spasi antar baris */
-
 /* List dalam card */
-.card ul { padding-left: 20px; /* jarak bullet ke kiri */
+.card ul {
+  padding-left: 20px; /* jarak bullet ke kiri */
   margin-top: 8px; /* jarak dari judul */
   color: #2f3e61;} /* navy lembut */
-.card ul li {margin-bottom: 6px; /* jarak antar item */
+.card ul li {
+  margin-bottom: 6px; /* jarak antar item */
   line-height: 1.5;} /* spasi baris */
 
 /* ANIMASI MASUK */
 @keyframes fadeSlide {
-  0% {opacity: 0; /* awalnya transparan */
-    transform: translateY(20px)}; /* muncul dari bawah */
-  100% {opacity: 1; /* tampil penuh */
-    transform: translateY(0);}} /* kembali ke posisi */
-.card {animation: fadeSlide 0.6s ease-out forwards; /* jalankan animasi muncul */
+  0% {
+    opacity: 0; /* awalnya transparan */
+    transform: translateY(20px);} /* muncul dari bawah */
+  100% {
+    opacity: 1; /* tampil penuh */
+    transform: translateY(0); }}/* kembali ke posisi */
+.card {
+  animation: fadeSlide 0.6s ease-out forwards; /* jalankan animasi muncul */
   transition: transform 0.25s ease, box-shadow 0.25s ease;} /* transisi hover */
-
 /* HOVER EFEK */
-.card:hover {transform: translateY(-6px); /* efek melayang */
+.card:hover {
+  transform: translateY(-6px); /* efek melayang */
   box-shadow: 
     0 0 12px rgba(20,30,70,0.25), /* glow navy lembut */
     0 8px 18px rgba(0,0,0,0.15);} /* bayangan tambahan */
