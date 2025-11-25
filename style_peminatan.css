@@ -28,14 +28,12 @@ nav a { color: #ffffff; /* warna teks menu */
   text-decoration: none; /* hilangkan garis bawah */
   font-weight: bold; }/* teks ditebalkan */
   nav a:hover {color: #ffdd57;} /* efek hover (saat diarahkan) */
-
 .desc {
-  margin-top: -10px; 
-  margin-bottom: 20px;
-  color: #ccc; /* optional */
-  font-size: 0.95em; /* sedikit lebih kecil */
+  margin-top: 0px; 
+  margin-bottom: 10px;
+  color: #162382; /* optional */
+  font-size: 1em; /* sedikit lebih kecil */
 }
-
 
 /* === BAGIAN UTAMA KONTEN === */
 main {
@@ -57,6 +55,7 @@ main h2 { margin-bottom: 15px; /* jarak judul dan paragraf */}
   font-weight: bold; /* teks tombol ditebalkan */
   transition: background-color 0.3s; /* animasi halus saat hover */}
 .btn:hover {background-color: #16324f; /* warna tombol saat hover */}
+
 * === CARD SECTION === */
 .card {
   background: #ffffff; /* warna latar kartu (putih bersih) */
@@ -64,16 +63,12 @@ main h2 { margin-bottom: 15px; /* jarak judul dan paragraf */}
   margin: 25px auto; /* jarak antar kartu + posisikan di tengah */
   width: 88%; /* lebar responsif */
   max-width: 750px; /* batas maksimum lebar kartu */
-
   border-radius: 14px; /* sudut melengkung */
   border: 1px solid #d9dde6; /* garis pinggir abu lembut */
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06); /* bayangan kecil */
-
   text-align: left; /* teks rata kiri */
   color: #1c2741; /* warna teks navy elegan */
-
-  transition: 0.25s ease; /* animasi lembut saat hover */
-}
+  transition: 0.25s ease;} /* animasi lembut saat hover */
 
 /* Efek hover aesthetic lembut */
 .card:hover {
